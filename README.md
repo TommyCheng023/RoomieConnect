@@ -19,7 +19,8 @@ Have no idea who to live with?
 ### User Registration Page
 * register using **BU Email Only**, (DUO Authentication preferred), the email will be stored in the database as `contact info`
 * each new user has to fill out a questionnaire with the following:
-  0. `()` means multiple choice questions, `[]` means restriction on free response questions
+
+`()` means multiple choice questions, `[]` means restriction on free response questions
   1. name
   2. gender (man, woman, prefer not to talk)
   3. academic classification (freshmane, sophomore, junior, senior)
