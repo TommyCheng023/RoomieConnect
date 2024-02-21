@@ -185,3 +185,9 @@ GitHub.sublime-settings
 # Note: If you wish to whitelist themes,
 # uncomment the next line
 #/wp-content/themes
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/CS-411-Group-Project.iml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
