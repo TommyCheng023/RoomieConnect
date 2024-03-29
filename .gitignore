@@ -191,3 +191,5 @@ GitHub.sublime-settings
 .idea/misc.xml
 .idea/modules.xml
 .idea/vcs.xml
+
+yotpo_credential.json
