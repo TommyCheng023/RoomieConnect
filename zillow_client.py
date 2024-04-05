@@ -27,7 +27,7 @@ def get_reviews(self,iUrl, iSkip,iSelect,iUnselect,iTop,iOrderby):
   response = requests.request("GET",bridge_url, params=bridge_params)
   if response.ok():
     print(response.text)
-    return response
+    return response.json()
   else:
     response.raise_for_status()
 """
