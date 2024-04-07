@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration Page</title>
+    <link rel="stylesheet" href="styles_registration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <script>
+        function togglePasswordVisibility() {
+            var password = document.getElementById("password");
+            var rePassword = document.getElementById("rePassword");
+            var toggle = document.getElementById("togglePassword");
+
+            if (password.type === "password") {
+                password.type = "text";
+                rePassword.type = "text";
+                toggle.textContent = "Hide Passwords";
+            } else {
+                password.type = "password";
+                rePassword.type = "password";
+                toggle.textContent = "Show Passwords";
+            }
+        }
+
+        function validatePassword() {
+            var password = document.getElementById("password");
+            var rePassword = document.getElementById("rePassword");
+
+            if (password.value !== rePassword.value) {
+                alert("Passwords do not match. Please try again.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="registration-container">
+        <h2>User Registration</h2>
+        <form action="/register" method="post" onsubmit="return validatePassword()">
+            <input type="email" placeholder="BU Email" required pattern=".+@bu.edu" title="Please use your BU email.">
+            
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" required pattern="(?=.*[a-zA-Z]).{8,}">
+                <i class="fa fa-eye toggle-password" onclick="togglePasswordVisibility('password', 'togglePassword')"></i>
+            </div>
+            <div class="input-group">
+                <input type="password" id="rePassword" placeholder="Re-enter Password" required>
+                <i class="fa fa-eye toggle-password" onclick="togglePasswordVisibility('rePassword', 'toggleRePassword')"></i>
+            </div>
+            
+            <input type="text" placeholder="Name" required>
+            <select name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="man">Man</option>
+                <option value="woman">Woman</option>
+                <option value="prefer_not_to_say">Prefer not to say</option>
+            </select>
+            <select name="classification" required>
+                <option value="">Academic Classification</option>
+                <option value="freshman">Freshman</option>
+                <option value="sophomore">Sophomore</option>
+                <option value="junior">Junior</option>
+                <option value="senior">Senior</option>
+            </select>
+            <input type="number" placeholder="Age" required>
+            <input type="text" placeholder="Building Preference">
+            <input type="number" placeholder="Monthly Rent Budget" required>
+
+            <textarea placeholder="Self-Description (150 words max)" required maxlength="150"></textarea>
+            <textarea placeholder="Roommate Expectation (150 words max)" required maxlength="150"></textarea>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
