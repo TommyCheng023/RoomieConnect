@@ -75,8 +75,10 @@ body {
     border: none;
     background-color: #fff;
     color: #666;
-    border-radius: 50%; /* 圆形按钮 */
-    width: 40px; /* 设置宽度和高度保持按钮为圆形 */
+    border-radius: 50%; 
+    width: 40px; 
+    border-radius: 50%; 
+    width: 40px; 
     height: 40px;
     display: flex;
     justify-content: center;

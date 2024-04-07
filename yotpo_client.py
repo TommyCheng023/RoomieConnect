@@ -30,7 +30,7 @@ class YotpoClient:
         """
             Retrieve reviews for a given product.
         """
-        url = f"https://api.yotpo.com/v1/widget/{self.app_key}/products/{product_id}/reviews"
+        url = f"https://api.yotpo.com/v1/widget/{self.yotpo_app_key}/products/{product_id}/reviews"
         headers = {
             'Authorization': f"Bearer {self.token}"
         }
