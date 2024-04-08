@@ -1,5 +1,7 @@
 import mysql.connector
-from mysql.connector import errorcode
+from config import Config
+
+config = Config()
 
 def create_database(cursor, database_name):
     try:
@@ -29,11 +31,11 @@ def execute_sql_file(file_path, db):
 
 if __name__ == "__main__":
     db_config = {
-        'host': 'localhost',
-        'user': 'root',
-        'password': ''
+        'host': config.DATABASE_HOST,
+        'user': config.DATABASE_USER,
+        'password': config.DATABASE_PASSWORD
     }
-    database_name = 'RoomieConnect'
+    database_name = config.DATABASE_DB
     try:
         db = mysql.connector.connect(**db_config)
         cursor = db.cursor()
