@@ -62,87 +62,9 @@ body {
 .input-group input[type="password"] {
     width: 100%;
     padding: 15px;
-    padding-right: 40px; /* Make room for the eye icon */
-    margin-bottom: 10px; /* Add space between the input boxes */
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    box-sizing: border-box;
-}
 
-.toggle-password {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-
-.fa-eye {
-    color: #666;
-}/* styles.css */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150vh;
-    margin: 0;
-}
-
-.registration-container {
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 350px;
-    max-width: 90%;
-    text-align: center;
-}
-
-.registration-container input,
-.registration-container select,
-.registration-container textarea {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    box-sizing: border-box;
-}
-
-.registration-container input:focus,
-.registration-container select:focus,
-.registration-container textarea:focus {
-    border-color: #ee4b28;
-    outline: none;
-}
-
-.registration-container button {
-    width: 80%;
-    padding: 10px;
-    margin: 20px 0;
-    border: none;
-    border-radius: 20px;
-    color: white;
-    background-color: #ee4b28;
-    cursor: pointer;
-    box-sizing: border-box;
-    transition: background-color 0.3s;
-}
-
-.registration-container button:hover {
-    background-color: #f77f50;
-}
-.input-group {
-    position: relative;
-    display: flex;
-    width: 100%;
-}
-
-.input-group input[type="password"] {
-    width: 100%;
-    padding: 15px;
+    padding-right: 40px; 
+    margin-bottom: 10px; 
     padding-right: 40px; 
     margin-bottom: 10px; 
     border: 2px solid #ddd;
