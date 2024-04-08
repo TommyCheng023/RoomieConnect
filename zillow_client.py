@@ -13,6 +13,7 @@ class ZillowClient:
 """
 NOTE: If you don't want to use all of the params, type None as input.
 """
+
 def get_reviews(self,iUrl, iSkip,iSelect,iUnselect,iTop,iOrderby):
   bridge_url = iUrl
   bridge_params = {
@@ -30,6 +31,16 @@ def get_reviews(self,iUrl, iSkip,iSelect,iUnselect,iTop,iOrderby):
     return response.json()
   else:
     response.raise_for_status()
+
+def scrape_data(self, data):
+
+  for review in data['value']:
+    review_date = review['ReviewDate']
+    rating = review['Rating']
+    service_year = review['ServiceYear']
+
+    
+
 """
 
 
@@ -43,6 +54,7 @@ bridge_params = {
 
 response = requests.get(bridge_url, params=bridge_params)
 print(response.text)
-"""
+
   
 
+"""
