@@ -193,3 +193,4 @@ GitHub.sublime-settings
 .idea/vcs.xml
 
 yotpo_credential.json
+config.py
