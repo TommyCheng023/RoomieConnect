@@ -3,6 +3,11 @@
 
 ### Each person needs to create an individual local branch and work on the branch. **Don't push directly on master!**
 
+# Environment Setup
+```sh
+pip install -r requirements.txt
+```
+
 # Current Plan
 ## Topic: Off-Campus Roommates Marketplace
 Have no idea who to live with? 
