@@ -7,7 +7,9 @@
 ```sh
 pip install -r requirements.txt
 ```
-
+```sh
+python initialize_db.py
+```
 # Current Plan
 ## Topic: Off-Campus Roommates Marketplace
 Have no idea who to live with? 
