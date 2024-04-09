@@ -1,0 +1,10 @@
+/*
+    This stylesheet contains not only the style rules for the navbar,
+    but also the general style rules for some common tags such as `p`, `h1` and `a`.
+*/
+
+/* general style rules */
+label {
+    font-size: 0.9rem;
+    
+}

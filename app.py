@@ -1,6 +1,7 @@
 from flask import Flask, render_template, jsonify
 from config import Config
 from yotpo_client import YotpoClient
+from pageLogic import register_logic
 
 # Initialization
 app = Flask(__name__)
@@ -10,6 +11,10 @@ app.config.from_object(Config)
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    return register_logic.register()
 
 @app.route('/reviews/<product_id>')
 def get_product_reviews(product_id):
