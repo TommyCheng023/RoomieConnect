@@ -4,3 +4,6 @@ class Config(object):
     DATABASE_USER = 'root'
     DATABASE_PASSWORD = ''
     DATABASE_DB = 'RoomieConnect'
+class Config:
+    DEBUG = False
+    SECRET_KEY = ''
