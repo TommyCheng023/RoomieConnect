@@ -1,5 +1,5 @@
 # CS-411-Group-Project
-* Planned Project Framework: Flask + Jinja
+* Planned Project Framework: Flask + Jinja + MySQL
 
 ### Each person needs to create an individual local branch and work on the branch. **Don't push directly on master!**
 
@@ -7,7 +7,12 @@
 ```sh
 pip install -r requirements.txt
 ```
-
+# Database Setup:
+* Please install [MySQL](https://www.mysql.com/products/workbench/) first !!!
+* After installing MySQL, please update your own Config.py, unless you are using the default setting.
+```sh
+python initialize_db.py
+```
 # Current Plan
 ## Topic: Off-Campus Roommates Marketplace
 Have no idea who to live with? 
