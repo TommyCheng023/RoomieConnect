@@ -11,6 +11,7 @@ app.config.from_object(Config)
 db_config = {
     'host': app.config['DATABASE_HOST'],
     'user': app.config['DATABASE_USER'],
+    #comment
     'password': app.config['DATABASE_PASSWORD'],
     'database': app.config['DATABASE_DB']
 }
