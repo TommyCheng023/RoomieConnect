@@ -4,14 +4,21 @@
 */
 /* navbar, flash style rules */
 #flash_block {
-    width: 50%;
     display: flex;
+    justify-content: center;
     background: linear-gradient(lightblue, rgb(105, 200, 232), rgb(20, 175, 227));
     transition: all ease-in-out 0.4s;
-    justify-content: space-around;
 }
 
 /* general style rules */
 label {
     font-size: 0.9rem;
 }
+
+.hypertext {
+    color: orange;
+    transition: all ease 0.3s;
+}
+.hypertext:hover {
+    color: orangered;
+}  
