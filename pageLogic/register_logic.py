@@ -76,6 +76,6 @@ def register():
             db.close()
 
             flash('Successfully registered! You can login now.', 'info')
-            return redirect(url_for('home'))
+            return redirect(url_for('login'))
             
     return render_template("registration_page.html")
