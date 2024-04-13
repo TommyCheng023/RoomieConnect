@@ -27,9 +27,9 @@
             {% if messages %}
                 {% for msg in messages %}
                     {% if category == 'error' %}
-                        <p style="color: red">❌: {{msg}}</p>
+                        <p style="color: red">{{msg}}</p>
                     {% elif category == 'info' %}
-                        <p style="color: green">✅: {{msg}}</p>
+                        <p style="color: green">{{msg}}</p>
                     {% endif %}
                     <button onclick="removeMsg()">OK</button>
                 {% endfor %}
