@@ -6,6 +6,13 @@
         <link rel="stylesheet" href="../static/css/base.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <title>RoomieConnect</title>
+        <script>
+            // flash button feature
+            function removeMsg() {
+                var msg = document.getElementById('flash_block')
+                msg.style.display = 'none';
+            }
+        </script>
         {% block head %}
         {% endblock %}
     </head>
@@ -13,5 +20,21 @@
         <!-- Navbar -->
         {% block body %}
         {% endblock %}
+
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+        <div id="flash_block">
+            {% if messages %}
+                {% for msg in messages %}
+                    {% if category == 'error' %}
+                        <p style="color: red">❌: {{msg}}</p>
+                    {% elif category == 'info' %}
+                        <p style="color: green">✅: {{msg}}</p>
+                    {% endif %}
+                    <button onclick="removeMsg()">OK</button>
+                {% endfor %}
+            {% endif %}
+        </div>
+        {% endwith %}
     </body>
 </html>
