@@ -18,18 +18,20 @@ def login():
 
         cur = db.cursor(buffered=True)
 
-        input_email = request.form('email')
-        input_password = request.form('password')
+        input_email = request.form['email']
+        input_password = request.form['password']
 
         # try: fetch the user with the matched email from the database
-        cur.execute('SELECT * FROM users WHERE email = (%s)', (input_email,))
+        cur.execute('SELECT * FROM User WHERE bu_email = (%s)', (input_email,))
         user = cur.fetchone()
         if user:
-            encoded_password = input_password.encode('uft-8')
-            stored_password = cur.fetchone()[1]
+            encoded_password = input_password.encode('utf-8')
+            stored_password = user[1].encode('utf-8')
             if bcrypt.checkpw(encoded_password, stored_password):
+                user_name = user[4]
                 flash('Login successful. Welcome!')
                 session['email'] = input_email
+                session['name'] = user_name
                 return redirect(url_for('home'))
             else:
                 flash('Incorrect password! :(')

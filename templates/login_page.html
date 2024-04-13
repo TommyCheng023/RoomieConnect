@@ -9,16 +9,12 @@
         <p>Welcome back to find your dreamable roommate!</p>
         <form action="/login" method="post">
             <div class="input-container">
-                <input type="email" placeholder="Enter your BU email" required>
-                <input type="password" placeholder="Enter your password" required>
+                <input type="email" name="email" placeholder="Enter your BU email" required>
+                <input type="password" name="password" placeholder="Enter your password" required>
             </div>
             <div class="button-container">
                 <button type="submit" class="btn login-btn">Log In</button>
-                <div class="side-buttons">
-                    <a href="forgot_password_page.html" class="btn side-btn">Forgot Password</a>
-                    <a href="registration_page.html" class="btn side-btn">Sign Up</a>
-                </div>
-                
+                <a href="register" class="hypertext" style="font-size:medium; text-align: center">Sign Up</a>     
             </div>
         </form>
     </div>
