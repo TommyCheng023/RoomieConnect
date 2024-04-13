@@ -1,13 +1,15 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, flash
 from config import Config
 from yotpo_client import YotpoClient
-from pageLogic import register_logic
+from pageLogic import register_logic, login_logic
 import mysql.connector
+import os
 
 # Initialization
 app = Flask(__name__)
 yotpo_client = YotpoClient()
 app.config.from_object(Config)
+app.secret_key = os.environ.get('SECRET_KEY', 'optional_default_secret_key')
 
 db_config = {
     'host': app.config['DATABASE_HOST'],
@@ -19,12 +21,16 @@ db_config = {
 db = mysql.connector.connect(**db_config)
 
 @app.route('/')
-def index():
+def home():
     return render_template('index.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     return register_logic.register()
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    return login_logic.login()
 
 @app.route('/reviews/<product_id>')
 def get_product_reviews(product_id):
