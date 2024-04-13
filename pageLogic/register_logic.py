@@ -1,5 +1,7 @@
 from flask import render_template, request, redirect, session, url_for, flash, abort
-import config
+from config import Config
+import mysql.connector
+import bcrypt
 
 def register():
     """
@@ -14,43 +16,66 @@ def register():
         real_name = request.form['real-name']
         gender = request.form['gender']
         grade = request.form['classification']
-        age = request.form['age']
+        age = int(request.form['age'])
         pref = request.form['building-pref']
-        budget = request.form['budget']
-        user = False # dummy for testing
-        domain = "bu.edu" # dummy for testing
+        pref_2 = request.form['building-pref-2']
+        pref_3 = request.form['building-pref-3']
+        budget = int(request.form['budget'])
+        mate_exep = request.form['expectation']
+        intro = request.form['self-intro']
         
-        # mydb = config.mydb()
-        # cur = mydb.cursor(buffered=True, dictionary=True)
-        # cur.execute('SELECT * FROM users WHERE email = (%s)', (email,))
-        # user = cur.fetchone()
-        # usename, domain = email.split("@")
+        db = mysql.connector.connect(
+            host=Config.DATABASE_HOST,
+            user=Config.DATABASE_USER,
+            password=Config.DATABASE_PASSWORD,
+            database=Config.DATABASE_DB
+        )
+
+        cur = db.cursor(buffered=True, dictionary=True)
+        cur.execute('SELECT * FROM User WHERE bu_email = (%s)', (email,))
+        user = cur.fetchone()
+        usename, domain = email.split("@")
 
         if user:
-            flash('Email already registered!', category='error')
+            flash('Email already registered! Please sign in.', 'error')
             return redirect(url_for('register'))
         elif len(email) < 4:
-            flash('Incorrect email format!', category='error')
+            flash('Incorrect email format!', 'error')
             return redirect(url_for('register'))
         elif "@" not in email:
-            flash('Incorrect email format!', category='error')
+            flash('Incorrect email format!', 'error')
             return redirect(url_for('register'))
         elif domain != "bu.edu":
-            flash('Please use a BU email!', category='error')
+            flash('Please use a BU email!', 'error')
             return redirect(url_for('register'))
         elif password != verify_password:
-            flash('Verified password not align with the first one.', category='error')
+            flash('Verified password not align with the first one.', 'error')
+            return redirect(url_for('register'))
+        elif age > 50 or age < 0:
+            flash('Invalid age for this website.', 'error')
             return redirect(url_for('register'))
         elif len(password) < 8:
-            flash('Password needs no less than 8 characters.', category='error')
+            flash('Password needs no less than 8 characters.', 'error')
             return redirect(url_for('register'))
         elif len(password) > 20:
-            flash('Password needs no more than 20 characters.', category='error')
+            flash('Password needs no more than 20 characters.', 'error')
             return redirect(url_for('register'))
-        elif any(char in password for char in ['{', '}', '[', ']', '(', ')', ';', "'", '"', '=', '<', '>', '#', '%', '&', '|', '`']):  #这些符号在读取时可能会导致程序错误
-            flash('Invalid characters detected: {, }, [, ], (, ), ;, "'", '" ', =, <, >, #, %, &, |, `.', category='error')
+        elif any(char in password for char in ['{', '}', '[', ']', '(', ')', ';', "'", '"', '=', '<', '>', '#', '%', '&', '|', '`']):  
+            flash('Invalid characters detected: {, }, [, ], (, ), ;, "'", '" ', =, <, >, #, %, &, |, `.', 'error')
             return redirect(url_for('register'))
         else:
-            flash('Dummy Message: success')
+            # encode password
+            password_bytes = password.encode('utf-8')
+            salt = bcrypt.gensalt()
+            hashed_password = bcrypt.hashpw(password_bytes, salt)
+
+            # upload user information into the database
+            cur.execute('INSERT INTO User VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (email, hashed_password, intro, mate_exep, real_name, gender, grade, age, pref, pref_2, pref_3, budget))
+            db.commit()
+            cur.close()
+            db.close()
+
+            flash('Successfully registered! You can login now.', 'info')
+            return redirect(url_for('home'))
             
     return render_template("registration_page.html")

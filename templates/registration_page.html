@@ -1,31 +1,15 @@
 {% extends 'base.html' %}
 {% block head %}
-    <title>User Registration Page</title>
+    <title>User Registration</title>
     <link rel="stylesheet" href="../static/css/styles_registration.css">
     <script src="../static/js/validate_password.js"></script>
-    <script>
-        // function togglePasswordVisibility() {
-        //     var password = document.getElementById("password");
-        //     var rePassword = document.getElementById("rePassword");
-        //     var toggle = document.getElementById("togglePassword");
-
-        //     if (password.type === "password") {
-        //         password.type = "text";
-        //         rePassword.type = "text";
-        //         toggle.textContent = "Hide Passwords";
-        //     } else {
-        //         password.type = "password";
-        //         rePassword.type = "password";
-        //         toggle.textContent = "Show Passwords";
-        //     }
-        // }
-    </script>
+    <script src="../static/js/fafa_eye.js"></script>
 {% endblock %}
 
 {% block body %}
     <div class="registration-container">
-        <h2 style="text-align: center;">User Registration</h2>
-        <form action="/register" method="post" onsubmit="return validatePassword()">
+        <h2 style="text-align: center;">Join our community!</h2>
+        <form action="/register" method="post">
             <label for="email">Enter your email.</label>
             <input type="email" placeholder="Enter your BU Email." name="email" id="email">
             
@@ -61,10 +45,12 @@
             </select>
 
             <label for="age">Enter your age as a number. <br> (enter 0 if you prefer not to tell)</label>
-            <input type="number" min="0" step="1" placeholder="Enter your age." name="age" id="age">
+            <input type="number" min="0" step="1" max="50" placeholder="Enter your age." name="age" id="age">
 
-            <label for="b-pref">Enter your building preference. (optional)</label>
+            <label for="b-pref">Enter three of your building preferences. (optional)</label>
             <input type="text" placeholder="Enter the building address." name="building-pref" id="b-pref">
+            <input type="text" placeholder="Enter the building address." name="building-pref-2" id="b-pref">
+            <input type="text" placeholder="Enter the building address." name="building-pref-3" id="b-pref">
 
             <label for="rent-budget">Enter your monthly rental budget.</label>
             <input type="number" min="1000" step="100" placeholder="Enter a number or use the buttons to shift the value." name="budget" id="rent-budget" required>
