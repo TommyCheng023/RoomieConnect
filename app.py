@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, flash
+from flask import Flask, render_template, jsonify, session, redirect, url_for
 from config import Config
 from yotpo_client import YotpoClient
 from pageLogic import register_logic, login_logic
@@ -22,7 +22,11 @@ db = mysql.connector.connect(**db_config)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    if session.get('email'):
+        userName = session.get('name')
+        return render_template('index.html', name=userName)
+    else:
+        return render_template('index.html', name=None)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -31,6 +35,12 @@ def register():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     return login_logic.login()
+
+@app.route('/logout')
+def logout():
+    session['email'] = None
+    session['name'] = None
+    return render_template('index.html')
 
 @app.route('/reviews/<product_id>')
 def get_product_reviews(product_id):
