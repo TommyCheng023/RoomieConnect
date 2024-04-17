@@ -38,9 +38,8 @@ def login():
 
 @app.route('/logout')
 def logout():
-    session['email'] = None
-    session['name'] = None
-    return render_template('index.html')
+    session.clear()
+    return redirect(url_for('login'))
 
 @app.route('/reviews/<product_id>')
 def get_product_reviews(product_id):
