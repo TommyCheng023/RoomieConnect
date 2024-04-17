@@ -31,10 +31,3 @@ def get_product_reviews(product_id):
 
 if __name__ == '__main__':
     app.run()
-
-"""
-STUFF TO ADD FOR LOGIN BACKEND:
-1. Login
-2. Callback
-3. Logout
-"""
