@@ -23,6 +23,7 @@ def register():
         budget = int(request.form['budget'])
         mate_exep = request.form['expectation']
         intro = request.form['self-intro']
+        status = False
         
         db = mysql.connector.connect(
             host=Config.DATABASE_HOST,
@@ -70,7 +71,7 @@ def register():
             hashed_password = bcrypt.hashpw(password_bytes, salt)
 
             # upload user information into the database
-            cur.execute('INSERT INTO User VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (email, hashed_password, intro, mate_exep, real_name, gender, grade, age, pref, pref_2, pref_3, budget))
+            cur.execute('INSERT INTO User VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (email, hashed_password, intro, mate_exep, real_name, gender, grade, age, pref, pref_2, pref_3, budget, status))
             db.commit()
             cur.close()
             db.close()

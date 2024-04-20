@@ -11,6 +11,10 @@ yotpo_client = YotpoClient()
 app.config.from_object(Config)
 app.secret_key = os.environ.get('SECRET_KEY', 'optional_default_secret_key')
 
+# Session Auto Expiration: kick off if the user hits a 10-minute inactivity
+from datetime import timedelta
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=10)
+
 db_config = {
     'host': app.config['DATABASE_HOST'],
     'user': app.config['DATABASE_USER'],

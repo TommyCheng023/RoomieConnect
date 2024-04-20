@@ -32,6 +32,7 @@ def login():
                 flash('Login successful. Welcome!')
                 session['email'] = input_email
                 session['name'] = user_name
+                session.permanent = True     # monitor inactivity
                 return redirect(url_for('home'))
             else:
                 flash('Incorrect password! :(')

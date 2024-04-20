@@ -13,5 +13,10 @@ CREATE TABLE User (
     building_preference1 VARCHAR(255),
     building_preference2 VARCHAR(255),
     building_preference3 VARCHAR(255),
-    rent_budget INT
+    rent_budget INT,
+    found_roommate BOOLEAN,
 );
+
+-- if created before merging the commits on April 20, 2024, execute this line
+ALTER TABLE User
+ADD found_roommate BOOLEAN;
