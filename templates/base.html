@@ -20,17 +20,24 @@
         {% endblock %}
     </head>
     <body>
-        {% block header %}{% endblock %}
+        {% block header %}
+        <div class="header">
+            <img src="static/images/RC_copy.jpeg" alt="RoomieConnect Logo" class="logo">
+            <h1>Off-Campus Housing Marketplace - RoomieConnect</h1>
+        </div>
+        {% endblock %}
         {% block navbar %}
         <!-- Navbar -->
-        <nav>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/listings">Listings</a></li>
-                <li><a href="/roommates">Roommates</a></li>
-                <li><a href="/subleases">Subleases</a></li>
-                <li><a href="/resources">Resources</a></li>
-            </ul>
+        <nav class="navbar">
+            <div class="navbar-section left">
+                <a href="/" class="navbar-brand">Home</a>
+                <a href="/roommates" class="navbar-brand">Roommates</a>
+                <a href="/resources" class="navbar-brand">Resources</a>
+            </div>
+            <div class="navbar-section right">
+                <a href="/login" class="navbar-link">LOG IN</a>
+                <a href="/register" class="navbar-link navbar-button">GET STARTED</a>
+            </div>
         </nav>
         {% endblock %}
         {% block body %}{% endblock %}

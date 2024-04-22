@@ -1,27 +1,62 @@
 /*
     This stylesheet contains not only the style rules for the navbar,
     but also the general style rules for some common tags such as `p`, `h1` and `a`.
+
+    Header designed by Asya. Navbar and Flash designed by Tommy.
 */
 /* header */
-.header { background-color: #00274C; padding: 20px; color: white; }
-.header { display: flex; align-items: center; background-color: #00274C; padding: 20px; color: white; }
+.header { background-color: #480101; padding: 20px; color: white; }
+.header { display: flex; align-items: center; background-color: #480101; padding: 20px; color: white; }
 .logo { height: 130px; margin-right: 20px; border-radius: 45px;}
 .header h1 { margin: 0; font-size: 24px; }
 
 /* navbar */
-.nav-links { list-style: none; display: flex; border-radius: 8px; padding: 0; margin: 0; align-items: center; }
-.nav-links li { padding-top: 20px; margin-left: 20px; }
-.nav-links li a { color: #00397a; text-decoration:solid; font-size: 20px; font-family: 'Times New Roman', Times, serif; font-weight: bolder; }
-
-.nav-links li a {
-  color: #00397a;
-  text-decoration: none;
-  font-size: 16px;
-  transition: color 0.3s ease, text-decoration 0.3s ease; /* Transition effect for color and text-decoration */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff; /* Change as needed */
+    border-bottom: grey 2px solid;
 }
-
-.nav-links li a:hover, .nav-links li a:focus {
-  color: #cf5906; /* Change the color on hover to anything you prefer */
+  
+.navbar-section {
+    display: flex;
+    align-items: center;
+}
+.navbar-section a {
+    text-decoration: none;
+    color: orange;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    font-size: large;
+}
+.navbar-section a:hover {
+    color: orangered;
+}
+  
+.navbar-brand {
+    margin-right: 20px; /* Space between logo and navbar items */
+}
+  
+.navbar-link {
+    margin-left: 20px; /* Space between links */
+    text-decoration: none;
+    color: #000; /* Change as needed */
+    cursor: pointer;
+}
+  
+.navbar-button {
+    padding: 10px 20px;
+    background-color: #000; /* Change as needed */
+    color: #fff; /* Change as needed */
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+  
+.navbar-link:hover, .navbar-button:hover {
+    opacity: 0.7; /* Change as needed */
 }
 
 /* flash style rules */
