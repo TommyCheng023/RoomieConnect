@@ -1,4 +1,4 @@
-class Config:
+class Config(object):
     DEBUG = False
     SECRET_KEY = ''
 class Config(object):
