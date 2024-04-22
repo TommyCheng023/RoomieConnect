@@ -51,7 +51,7 @@ def roommates():
     if session.get('email'):
         return roommates_logic.showRoommates()
     else:
-        flash('Session expired. Please log in.', 'error')
+        flash('Please sign in.', 'error')
         return login_logic.login()
 
 @app.route('/reviews/<product_id>')

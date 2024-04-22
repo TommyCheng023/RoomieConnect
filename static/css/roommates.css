@@ -5,6 +5,8 @@
 .profile-info { margin-left: 15px; flex-grow: 1; }
 .profile-info p { margin: 5px 0; }
 .profile-action { text-align: right; }
-.profile-action button { padding: 10px 15px; background-color: #0056b3; color: white; border: none; border-radius: 5px; cursor: pointer; }
-.profile-action button:hover { background-color: #cf5906; }
+.email-btn { padding: 10px 15px; background-color: #0056b3; color: white; border: none; border-radius: 5px; cursor: pointer; }
+.email-btn:hover { background-color: #cf5906; }
+.detail-btn { background-color: grey; padding: 10px 15px; color: white; border: none; border-radius: 5px; cursor: pointer; }
+.detail-btn:hover { background-color: goldenrod; }
 .note { padding: 15px; background-color: #fffae6; margin-bottom: 20px; border-left: 3px solid #ffc107; }

@@ -17,8 +17,9 @@
             <p>Academic Classification: {{entry['academic_classification']}}</p>
             <p>Monthly Rent Budget: ${{entry['rent_budget']}}</p>
         </div>
-        <div class="profile-action">
-            <button>Email</button>
+        <div class="profile-action" style="display: flex; justify-content: space-around; flex-direction: column;">
+            <button class="email-btn" style="margin-bottom: 20%;">Email</button>
+            <button class="detail-btn">View Details</button>
         </div>
     </div>
     {% endfor %}

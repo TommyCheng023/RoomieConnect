@@ -3,10 +3,38 @@
     <title>Homepage - RoomieConnect</title>
     <link rel="stylesheet" href="../static/css/index.css">
 {% endblock %}
+{% block navbar %}
+<nav class="navbar">
+    <div class="navbar-section left">
+        <a href="/" class="navbar-brand">Home</a>
+        <a href="/roommates" class="navbar-brand">Roommates</a>
+        <a href="/resources" class="navbar-brand">Resources</a>
+    </div>
+    <div class="dropdown">
+        <div class="navbar-section right" id="menu-icon">
+            <div class="icon-line"></div>
+            <div class="icon-line"></div>
+            <div class="icon-line"></div>
+        </div>
+        {% if name == None %}
+        <div class="dropdown-content">
+            <a href="/register">Register</a>
+            <a href="/login">Login</a>
+        </div>
+        {% else %}
+        <div class="dropdown-content">
+            <a href="/profile">Personal Profile</a>
+            <a href="/logout">Log Out</a>
+        </div>
+        {% endif %}
+    </div>
+</nav>
+{% endblock %}
+
 {% block body %}
-<div class="index-wrapper">
     <!-- Expected to be the main page of the website. -->
     {% if name == None %}
+    <div class="index-wrapper">
         <div class="left-index">
             <h1>Welcome to RoomieConnect!</h1>
             <p>Here you can connect and find roommates for your upcoming off-campus residential life!</p>
@@ -45,10 +73,22 @@
                 <span class="dot" onclick="currentSlide(3)"></span>
             </div>
         </div>
+        <script src="../static/js/img_slider.js"></script>
+    </div>
     {% else %}
-        <h1>Welcome back to RoomieConnect! {{ name }}</h1>
-        <a href="logout" class="hypertext">logout</a>
+    <h1 style="text-align: center;">Welcome back to RoomieConnect! {{ name }}.</h1>
+    <div class="user-index">
+        <div class="user-content">
+            <h3>What we offer:</h3>
+            <ul>
+                <li>Convenient roommate contacts and connections.</li>
+                <li>Reliable off-campus resources.</li>
+            </ul>
+        </div>
+        <div class="big-menu">
+
+        </div>
+    </div>
+
     {% endif %}
-    <script src="../static/js/img_slider.js"></script>
-</div>
 {% endblock %}

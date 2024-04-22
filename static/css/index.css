@@ -110,3 +110,20 @@
     from {opacity: .4}
     to {opacity: 1}
 }
+
+
+.user-index {
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+.user-content li {
+    line-height: 320%;
+}
+.big-menu {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
