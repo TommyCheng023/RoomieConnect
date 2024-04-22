@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../static/css/styles_login.css">
+{% endblock %}
+{% block body %}
+    <div class="login-container">
+        <h2>Hello Roomie!</h2>
+        <p>Welcome back to find your dreamable roommate!</p>
+        <form action="/login" method="post">
+            <div class="input-container">
+                <input type="email" name="email" placeholder="Enter your BU email" required>
+                <input type="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="btn login-btn">Log In</button>
+                <p>Don't have an account? <a href="register" class="hypertext" style="font-size:medium; text-align: center">Create one here</a>!</p>  
+            </div>
+        </form>
+    </div>
+{% endblock %}
