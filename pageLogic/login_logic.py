@@ -29,16 +29,16 @@ def login():
             stored_password = user[1].encode('utf-8')
             if bcrypt.checkpw(encoded_password, stored_password):
                 user_name = user[4]
-                flash('Login successful. Welcome!')
+                flash('Login successful. Welcome!', 'info')
                 session['email'] = input_email
                 session['name'] = user_name
                 session.permanent = True     # monitor inactivity
                 return redirect(url_for('home'))
             else:
-                flash('Incorrect password! :(')
+                flash('Incorrect password! :(', 'error')
                 return redirect(url_for('login'))
         else:
-            flash('User does not exist.')
+            flash('User does not exist.', 'error')
             return redirect(url_for('login'))
     
     return render_template('login_page.html')

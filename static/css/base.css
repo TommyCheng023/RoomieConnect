@@ -6,9 +6,41 @@
 #flash_block {
     display: flex;
     justify-content: center;
-    background: linear-gradient(lightblue, rgb(105, 200, 232), rgb(20, 175, 227));
-    transition: all ease-in-out 0.4s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation-name: none;
+    animation-duration: 0.5s;
 }
+.flash_content {
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+}
+#error_bg {
+    background-color: #800000;
+}
+#success_bg {
+    background-color: green;
+}
+.flash_msg {
+    margin-top: 2px;
+    margin-bottom: 20px;
+    color: white;
+}
+.flash_button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+}
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
 
 /* general style rules */
 label {

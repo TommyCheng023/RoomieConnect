@@ -9,8 +9,11 @@
         <script>
             // flash button feature
             function removeMsg() {
-                var msg = document.getElementById('flash_block')
-                msg.style.display = 'none';
+                var msg = document.getElementById('flash_block');
+                msg.style.animationName = 'fadeOut';
+                msg.addEventListener('animationend', function() {
+                    msg.style.display = 'none';
+                });
             }
         </script>
         {% block head %}
@@ -22,16 +25,21 @@
         {% endblock %}
 
         <!-- flash messages -->
-        {% with messages = get_flashed_messages() %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
         <div id="flash_block">
             {% if messages %}
-                {% for msg in messages %}
+                {% for category, msg in messages %}
                     {% if category == 'error' %}
-                        <p style="color: red">{{msg}}</p>
+                    <div class="flash_content" id="error_bg">
+                        <p class="flash_msg">{{msg}}</p>
+                        <button class="flash_button" onclick="removeMsg()">OK</button>
+                    </div>
                     {% elif category == 'info' %}
-                        <p style="color: green">{{msg}}</p>
+                    <div class="flash_content" id="success_bg"></div>
+                        <p class="flash_msg">{{msg}}</p>
+                        <button class="flash_button" onclick="removeMsg()">OK</button>
+                    </div>
                     {% endif %}
-                    <button onclick="removeMsg()">OK</button>
                 {% endfor %}
             {% endif %}
         </div>

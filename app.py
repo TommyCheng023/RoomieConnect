@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, session, redirect, url_for
+from flask import Flask, render_template, jsonify, session, redirect, url_for, flash
 from config import Config
 from yotpo_client import YotpoClient
 from pageLogic import register_logic, login_logic
@@ -43,6 +43,7 @@ def login():
 @app.route('/logout')
 def logout():
     session.clear()
+    flash('Successfully logged out!', 'info')
     return redirect(url_for('login'))
 
 @app.route('/reviews/<product_id>')
