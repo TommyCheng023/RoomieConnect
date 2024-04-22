@@ -16,8 +16,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #fff; /* Change as needed */
+    background-color: white; 
     border-bottom: grey 2px solid;
+    position: sticky;
+    top: 0;
+    z-index: 900;
 }
   
 .navbar-section {
@@ -34,29 +37,58 @@
 .navbar-section a:hover {
     color: orangered;
 }
-  
 .navbar-brand {
-    margin-right: 20px; /* Space between logo and navbar items */
+    margin-right: 20px; 
 }
-  
 .navbar-link {
-    margin-left: 20px; /* Space between links */
+    margin-left: 20px;
     text-decoration: none;
-    color: #000; /* Change as needed */
+    color: #000;
     cursor: pointer;
 }
-  
-.navbar-button {
-    padding: 10px 20px;
-    background-color: #000; /* Change as needed */
-    color: #fff; /* Change as needed */
-    text-decoration: none;
-    border: none;
+
+.right {
+    display: inline-block;
     cursor: pointer;
 }
-  
-.navbar-link:hover, .navbar-button:hover {
-    opacity: 0.7; /* Change as needed */
+.right:hover .icon-line {
+    background-color: orangered;
+}
+.icon-line {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+    transition: all 0.2s ease;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    align-items: flex-end;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
 }
 
 /* flash style rules */
@@ -67,7 +99,7 @@
     top: 3%;
     animation-name: none;
     animation-duration: 0.5s;
-    z-index: 100;
+    z-index: 1000;
 }
 .flash_content {
     text-align: center;

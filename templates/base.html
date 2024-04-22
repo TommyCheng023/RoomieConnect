@@ -34,11 +34,19 @@
                 <a href="/roommates" class="navbar-brand">Roommates</a>
                 <a href="/resources" class="navbar-brand">Resources</a>
             </div>
-            <div class="navbar-section right">
-                <a href="/login" class="navbar-link">LOG IN</a>
-                <a href="/register" class="navbar-link navbar-button">GET STARTED</a>
+            <div class="dropdown">
+                <div class="navbar-section right" id="menu-icon">
+                    <div class="icon-line"></div>
+                    <div class="icon-line"></div>
+                    <div class="icon-line"></div>
+                </div>
+                <div class="dropdown-content">
+                    <a href="/profile">Personal Profile</a>
+                    <a href="/logout">Log Out</a>
+                </div>
             </div>
         </nav>
+
         {% endblock %}
         {% block body %}{% endblock %}
 

@@ -48,7 +48,11 @@ def logout():
 
 @app.route('/roommates', methods=['GET'])
 def roommates():
-    return roommates_logic.showRoommates()
+    if session.get('email'):
+        return roommates_logic.showRoommates()
+    else:
+        flash('Session expired. Please log in.', 'error')
+        return login_logic.login()
 
 @app.route('/reviews/<product_id>')
 def get_product_reviews(product_id):
