@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>Find your roommates!</title>
+    <link rel="stylesheet" href="../static/css/roommates.css">
+{% endblock %}
+{% block header %}
+    <div class="header">
+        <img src="../static/images/RC_copy.jpeg" alt="RoomieConnect Logo" class="logo">
+        <h1>Off-Campus Housing Marketplace - RoomieConnect</h1>
+    </div>
+{% endblock %}
+{% block body %}
+<div class="container">
+    {% for entry in profiles %}
+    <div class="profile-card">
+        <div class="profile-image">
+            <img src="../static/images/avatar_test.webp" alt="Profile Picture">
+        </div>
+        <div class="profile-info">
+            <h3>{{entry['name']}}</h3>
+            <p>Age: {{entry['age']}}</p>
+            <p>Gender: {{entry['gender']}}</p>
+            <p>Academic Classification: {{entry['academic_classification']}}</p>
+            <p>Monthly Rent Budget: ${{entry['rent_budget']}}</p>
+        </div>
+        <div class="profile-action">
+            <button>Email</button>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
