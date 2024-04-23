@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Index</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block head %}
+    <title>Homepage - RoomieConnect</title>
+{% endblock %}
+{% block body %}
+    <!-- Expected to be the main page of the website. -->
+    {% if name == None %}
+        <h1>Welcome to RoomieConnect!</h1>
+        <p>Here you can connect and find roommates for your upcoming off-campus residential life!</p>
+        <p>You can <a href="register" class="hypertext">sign up</a> or <a href="login" class="hypertext">login</a> to start your experience! :D </p>
+    {% else %}
+        <h1>Welcome back to RoomieConnect! {{ name }}</h1>
+    {% endif %}
+{% endblock %}

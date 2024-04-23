@@ -1,0 +1,24 @@
+/*
+    This stylesheet contains not only the style rules for the navbar,
+    but also the general style rules for some common tags such as `p`, `h1` and `a`.
+*/
+/* navbar, flash style rules */
+#flash_block {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(lightblue, rgb(105, 200, 232), rgb(20, 175, 227));
+    transition: all ease-in-out 0.4s;
+}
+
+/* general style rules */
+label {
+    font-size: 0.9rem;
+}
+
+.hypertext {
+    color: orange;
+    transition: all ease 0.3s;
+}
+.hypertext:hover {
+    color: orangered;
+}  
