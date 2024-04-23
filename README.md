@@ -42,13 +42,19 @@ Have no idea who to live with?
 * setup a password and reenter it
 * after the registration is done, user will be sent to `roommates matching main page`
 * at the same time, the user's own profile will automatically be displayed as a `card` on `roommates matching main page`
+* <img width="1205" alt="image" src="https://github.com/TommyCheng023/CS-411-Group-Project/assets/123038158/34cc4425-6699-482b-b079-4cc9349c923a">
+
 
 ### Login Page
 * enter **email and password** to login
 * `Forget Password`: a small subline under the login button
+* <img width="1142" alt="image" src="https://github.com/TommyCheng023/CS-411-Group-Project/assets/123038158/056b80de-8887-439e-8893-590eeb815a72">
+
 
 ### Forget Password?
 * verification code through email
+* <img width="1192" alt="image" src="https://github.com/TommyCheng023/CS-411-Group-Project/assets/123038158/979213f4-08d1-4f31-9901-826e250945d5">
+
 
 ### Remove Posting
 * the user's own posted `card` has a `remove` button replaced by `contact`, once there's no need to find roommates, the `card` can be removed from the page by pressing the button
