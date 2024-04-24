@@ -42,18 +42,24 @@ Have no idea who to live with?
 * setup a password and reenter it
 * after the registration is done, user will be sent to `roommates matching main page`
 * at the same time, the user's own profile will automatically be displayed as a `card` on `roommates matching main page`
-* <img width="1205" alt="image" src="https://github.com/TommyCheng023/CS-411-Group-Project/assets/123038158/19ed17bc-26d3-4ca6-9a0e-74ff446120a7">
+
+### Registration Page Future Expectation
+<img width="1205" alt="image" src="https://github.com/TommyCheng023/CS-411-Group-Project/assets/123038158/19ed17bc-26d3-4ca6-9a0e-74ff446120a7">
 
 
 ### Login Page
 * enter **email and password** to login
 * `Forget Password`: a small subline under the login button
-* <img width="1142" alt="image" src="https://github.com/TommyCheng023/CS-411-Group-Project/assets/123038158/0cf69363-3cd6-4634-8f32-a0fcf6df15ea">
+
+### Login Page Future Expectation
+<img width="1142" alt="image" src="https://github.com/TommyCheng023/CS-411-Group-Project/assets/123038158/0cf69363-3cd6-4634-8f32-a0fcf6df15ea">
 
 
 ### Forget Password?
 * verification code through email
-* <img width="1192" alt="image" src="https://github.com/TommyCheng023/CS-411-Group-Project/assets/123038158/9ba39e8f-61ac-44e8-a2ff-1f5f5679c3d4">
+
+### Forget Password Future Expectation
+<img width="1192" alt="image" src="https://github.com/TommyCheng023/CS-411-Group-Project/assets/123038158/9ba39e8f-61ac-44e8-a2ff-1f5f5679c3d4">
 
 
 ### Remove Posting

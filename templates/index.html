@@ -2,6 +2,16 @@
 {% block head %}
     <title>Homepage - RoomieConnect</title>
     <link rel="stylesheet" href="../static/css/index.css">
+    <script src="https://kit.fontawesome.com/30316820a7.js" crossorigin="anonymous"></script>
+    <script>
+        // document.querySelector('.user-left').addEventListener('mouseenter', function() {
+        //     document.querySelector('.user-right').classList.add('slide-in');
+        // });
+        
+        // document.querySelector('.user-left').addEventListener('mouseleave', function() {
+        //     document.querySelector('.user-right').classList.remove('slide-in');
+        // });
+    </script>
 {% endblock %}
 {% block navbar %}
 <nav class="navbar">
@@ -77,18 +87,28 @@
     </div>
     {% else %}
     <h1 style="text-align: center;">Welcome back to RoomieConnect! {{ name }}.</h1>
-    <div class="user-index">
-        <div class="user-content">
-            <h3>What we offer:</h3>
-            <ul>
-                <li>Convenient roommate contacts and connections.</li>
-                <li>Reliable off-campus resources.</li>
-            </ul>
+    <div class="user-wrapper">
+        <div class="user-index">
+            <a class="user-left" id="roomie" href="roommates"><i class="fa-solid fa-user-plus"></i></a>
+            <div class="user-right" id="roomie-right">
+                <h3>Find roommates that FIT!</h3>
+                <p>Post your profile to the marketplace and at the same time, find people that meet your expectation from our platform!</p>
+            </div>
         </div>
-        <div class="big-menu">
-
+        <div class="user-index">
+            <a class="user-left" id="housing" href="#"><i class="fa-solid fa-house"></i></a>
+            <div class="user-right" id="housing-right">
+                <h3>Near BU? Cheap? Better living condition?</h3>
+                <p>Our <u>resources</u> page shows you feedbacks and reviews of popular off-campus housing from Yotpo!</p>
+            </div>
+        </div>
+        <div class="user-index">
+            <a class="user-left" id="my-prof" href="#"><i class="fa-solid fa-gear"></i></a>
+            <div class="user-right" id="prof-right">
+                <h3>Manage My Account</h3>
+                <p>Do you have any updates to your profile? Remember to change your status after you found a roommate!</p>
+            </div>
         </div>
     </div>
-
     {% endif %}
 {% endblock %}
