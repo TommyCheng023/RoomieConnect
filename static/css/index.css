@@ -1,0 +1,179 @@
+.index-wrapper {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.left-index {
+    width: 40%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+.buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5%;
+}
+.common-design {
+    background-color: #ee4b28;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: all 0.4s ease-in-out;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.common-design:hover {
+    background-color: #f77f50;
+}
+
+.right-index {
+    width: 60%;
+    box-sizing: border-box;
+}
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+.mySlides {
+    display: none;
+}
+.mySlides img {
+    vertical-align: middle;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+.text {
+    color: black;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+.numbertext {
+    color: white;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+  
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+
+
+.fade {
+    animation-name: fadeTo;
+    animation-duration: 1.5s;
+}
+@keyframes fadeTo {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+
+.user-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 2% 5% 5% 5%;
+}
+.user-index {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5%;
+}
+.user-left {
+    width: 15%;
+    height: 20vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#roomie {
+    background-color: green;
+}
+#roomie-right {
+    background: linear-gradient(to right, rgb(95, 167, 36), rgb(132, 205, 100), rgb(143, 224, 143), #f4f4f4);
+}
+
+.fa-user-plus, .fa-house, .fa-gear {
+    font-size: 10vmin;
+    color: black;
+    transition: all 0.2s ease-in-out;
+}
+.user-left:hover .fa-user-plus {
+    color: white;
+}
+.user-left:hover .fa-house {
+    color: rgb(236, 255, 91);
+}
+.user-left:hover .fa-gear {
+    color: lightgrey;
+}
+.user-right {
+    width: 85%;
+    height: 20vmin;
+    padding-left: 2%;
+}
+.user-right h3,p {
+    color: black;
+}
+#housing {
+    background-color: rgb(255, 132, 0);
+}
+#housing-right {
+    background: linear-gradient(to right, gold, rgb(234, 208, 60), rgb(255, 255, 164), #f4f4f4);
+}
+#my-prof {
+    background-color: darkslategrey;
+}
+#prof-right {
+    background: linear-gradient(to right, rgb(110, 110, 110), rgb(161, 161, 161), #f4f4f4);
+}
+
+.user-wrapper a {
+    cursor: pointer;
+    text-decoration: none;
+}

@@ -1,7 +1,7 @@
-from flask import Flask, render_template, jsonify, session, redirect, url_for
+from flask import Flask, render_template, jsonify, session, redirect, url_for, flash
 from config import Config
 from yotpo_client import YotpoClient
-from pageLogic import register_logic, login_logic
+from pageLogic import register_logic, login_logic, roommates_logic
 import mysql.connector
 import os
 
@@ -43,7 +43,16 @@ def login():
 @app.route('/logout')
 def logout():
     session.clear()
+    flash('Successfully logged out!', 'info')
     return redirect(url_for('login'))
+
+@app.route('/roommates', methods=['GET'])
+def roommates():
+    if session.get('email'):
+        return roommates_logic.showRoommates()
+    else:
+        flash('Please sign in.', 'error')
+        return login_logic.login()
 
 @app.route('/reviews/<product_id>')
 def get_product_reviews(product_id):
