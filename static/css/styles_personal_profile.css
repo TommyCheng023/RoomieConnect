@@ -1,59 +1,64 @@
 /* styles.css */
 .header {
-    padding-left: 5px;
 
-    padding-top: 15px;
-    padding-bottom: 10px;
     width:100%;
-    height:10%;
+    height:110px;
     text-align:left;
     background: #ffffff;
     color: #ee4b28;
-    font-size: 10px;
+    font-size: 20px;
     position: fixed;
-    top: 0;
-    left:0;
+top:0;
+left:0;
     outline: 0.5px solid gray;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display:flex;
+  flex-direction:row;
 
+  }
+
+  .header .dashboard{
+    position: fixed;
   }
 
 .header .home-link{
   position: fixed;
-  left:20%;
+left:250px;
+top:40px;
+color: black;
 }
 
 .dropdown {
     position: fixed;
     color: #ffffff;
     background-color: #ee4b28;
-    padding:10px;
+
     text-align:center;
     line-height: 500%;
     display: inline-block;
     right:0;
     top:0;
-    height:10%;
-    max-height:10%;
-    padding-top: 15px;
-    padding-bottom: 10px;
+    height:110px;
+
     font-size: 20px;
-    width:10%;
+    width:180px;
     
 
 }
 
+
+
 .dropdown-content {
   display:none;
-  position: absolute;
-  padding:10px;
+  position: fixed;
+
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 10%;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  z-index: 1;
-  width:10%;
+
   padding-top: 15px;
     padding-bottom: 10px;
+    width:180px;
 }
 
 .dropdown:hover{
@@ -68,6 +73,16 @@
   
 
 }
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
 
 body {
     font-family: 'Arial', sans-serif;
@@ -85,12 +100,16 @@ body {
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width:100%;
-    max-width:100%;
-    height:100%;
+    max-width:90%;
     text-align: center;
     margin: 200px auto;
 
    
+}
+
+select {
+  font: inherit;
+  font-size:20px;
 }
 
 .login-container {
@@ -99,7 +118,7 @@ body {
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 350px;
-  max-width: 90%;
+  max-width: 80%;
   text-align: center;
 }
 
@@ -111,6 +130,7 @@ body {
 
 
   .left-aligned {
+    font-size:20px;
     text-align: left;
 }
 
@@ -205,6 +225,7 @@ input:checked + .slider:before {
   cursor: pointer;
   box-sizing: border-box;
   transition: background-color 0.3s;
+font-size: 30px;
 }
 
 .btn:hover {
@@ -213,4 +234,15 @@ input:checked + .slider:before {
 
 .p {
   font-size: 1px;                               
+}
+
+.email-box {
+  border: 0.5px solid black;
+
+  min-width: 200px; /* adjust width as needed */
+  min-height:20px;
+  font-family: Arial, sans-serif;
+  background-color: #d0cbcb;
+  font-size: 20px;
+
 }
