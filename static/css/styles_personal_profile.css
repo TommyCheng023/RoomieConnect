@@ -1,0 +1,248 @@
+/* styles.css */
+.header {
+
+    width:100%;
+    height:110px;
+    text-align:left;
+    background: #ffffff;
+    color: #ee4b28;
+    font-size: 20px;
+    position: fixed;
+top:0;
+left:0;
+    outline: 0.5px solid gray;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display:flex;
+  flex-direction:row;
+
+  }
+
+  .header .dashboard{
+    position: fixed;
+  }
+
+.header .home-link{
+  position: fixed;
+left:250px;
+top:40px;
+color: black;
+}
+
+.dropdown {
+    position: fixed;
+    color: #ffffff;
+    background-color: #ee4b28;
+
+    text-align:center;
+    line-height: 500%;
+    display: inline-block;
+    right:0;
+    top:0;
+    height:110px;
+
+    font-size: 20px;
+    width:180px;
+    
+
+}
+
+
+
+.dropdown-content {
+  display:none;
+  position: fixed;
+
+  background-color: #f9f9f9;
+  min-width: 10%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+  padding-top: 15px;
+    padding-bottom: 10px;
+    width:180px;
+}
+
+.dropdown:hover{
+  background-color: #f77f50;
+}
+
+.dropdown:hover .dropdown-content {
+  position: fixed;
+  display: block;
+  display:flex;
+  flex-direction:column;
+  
+
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.information-container {
+    display:flex;
+    flex-direction:column;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width:100%;
+    max-width:90%;
+    text-align: center;
+    margin: 200px auto;
+
+   
+}
+
+select {
+  font: inherit;
+  font-size:20px;
+}
+
+.login-container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  max-width: 80%;
+  text-align: center;
+}
+
+.button_color {
+    background-color: #f77f50;
+    width: 500px;
+    border: 1px solid black;
+}
+
+
+  .left-aligned {
+    font-size:20px;
+    text-align: left;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #f77f50;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #f77f50;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.text {
+  max-width: 80%; /* Set the maximum width */
+  width: 80%;
+
+}
+
+.registration-container input,
+.registration-container select,
+.registration-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  background-color: #ee4b28;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+font-size: 30px;
+}
+
+.btn:hover {
+  background-color: #f77f50;
+}
+
+.p {
+  font-size: 1px;                               
+}
+
+.email-box {
+  border: 0.5px solid black;
+
+  min-width: 200px; /* adjust width as needed */
+  min-height:20px;
+  font-family: Arial, sans-serif;
+  background-color: #d0cbcb;
+  font-size: 20px;
+
+}

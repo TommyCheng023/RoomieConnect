@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Profile Page</title>
+    <link rel="stylesheet" href="../static/css/styles_personal_profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class=".button_color"></div>
+    <div class="header">
+        <div class="dashboard"><h1>Dashboard</h1></div>
+        
+        <div class="home-link">
+            <a href="base.html">Home</a>
+            <p1> / Dashboard </p1>
+        </div>
+        
+        <div class="dropdown">
+
+            <img src="account_circle_FILL0_wght400_GRAD0_opsz24.svg" alt="image" fill="white" style="transform: translate(-5px,10px)";> 
+
+
+            <span>Profile</span>
+            <img src="expand_more_FILL0_wght400_GRAD0_opsz24.svg" alt="image" fill="white" style="transform: translate(5px,5px)";> 
+            <div class="dropdown-content">
+                <a href="personal_profile_page.html">Dashboard</a>
+                <a href="login_page.html">Logout</a>
+              
+            </div>
+        </div>
+
+    </div>
+    <div class="information-container">
+        
+        <form action="/profile" method="post">
+        <h1 style="text-align: center;">Profile Information</h1>
+        <div class="left-aligned">Email</div>
+        <div class="email-box">
+           {{ bu_email }} 
+        </div>
+        
+       
+        <p4>&nbsp</p4>
+        <div class="left-aligned">Full Name</div>
+        <input type="text" required style="width: 99.5%; height: 25px; font-size: 20px;" id="editableInput" value="{{ user_info:name }}" onfocus="clearText(this)">
+        <p4>&nbsp</p4>
+        <div class="left-aligned" required >Gender</div>
+            <select id="gender" name="gender" required style="width: 100%; height: 30px; font-size: 20px;">
+                <option value="" selected hidden disabled>Select gender.</option>
+                <option value="man">Male</option>
+                <option value="woman">Female</option>
+                <option value="prefer_not_to_say">Prefer not to say</option>
+            </select>
+        <p4>&nbsp</p4>
+        <div class="left-aligned">Academic Classification</div>
+            <select name="classification" id="classification" required style="width: 100%; height: 30px; font-size: 20px;">
+                <option value="" selected hidden disabled >Make a selection here.</option>
+                <option value="freshman">Freshman</option>
+                <option value="sophomore">Sophomore</option>
+                <option value="junior">Junior</option>
+                <option value="senior">Senior</option>
+            </select>
+        <p4 style>&nbsp</p4>
+        <div class="left-aligned">Building Preference 1</div>
+        <input type="text" required style="width: 99.5%; height: 25px; font-size: 20px;" id="editableInput" value="{{ user_info:building_preference1 }}" onfocus="clearText(this)">
+        <p4>&nbsp</p4>
+        <div class="left-aligned">Building Preference 2</div>
+        <input type="text" required style="width: 99.5%; height: 25px; font-size: 20px;" id="editableInput" value="{{ user_info:building_preference2 }}" onfocus="clearText(this)">
+        <p4>&nbsp</p4>
+        <div class="left-aligned">Building Preference 3</div>
+        <input type="text" required style="width: 99.5%; height: 25px; font-size: 20px;" id="editableInput" value="{{ user_info:building_preference3 }}" onfocus="clearText(this)">
+        <p4>&nbsp</p4>
+        <div class="left-aligned">Monthly Rental Budget</div>
+        <input type="text" required style="width: 99.5%; height: 25px; font-size: 20px;" id="editableInput" value="{{ user_info:rent_budget }}" onfocus="clearText(this)">
+        <p4>&nbsp</p4>
+        <div class="left-aligned">Self-Description (200 words max)</div>
+        <textarea id="editableTextarea" required maxlength="200" style="width: 99.5%; height: 25px; font-size:20px; font-family: Arial, Helvetica, sans-serif;">{{ user_info:self_description }}</textarea>
+        <p4>&nbsp</p4>
+        <div class="left-aligned">Roommate Expectation (200 words max)</div>
+        <textarea id="editableTextarea" required maxlength="200" style="width: 99.5%;font-size:20px;height: 25px;  font-family: Arial, Helvetica, sans-serif;">{{ user_info:roommate_expectation }}</textarea>
+        <p4>&nbsp</p4>
+        <label class ="switch">
+            <input type ="checkbox">
+            <span class="slider round"></span>
+        </label>
+        <p4>&nbsp</p4>
+        <button type="submit" class="btn">Update</button>
+    </form>
+    </div>
+
+    
+    
+    
+</body>
+</html>
