@@ -1,7 +1,7 @@
 from flask import Flask, render_template, jsonify, session, redirect, url_for, flash
 from config import Config
 from yotpo_client import YotpoClient
-from pageLogic import register_logic, login_logic, roommates_logic
+from pageLogic import register_logic, login_logic, roommates_logic, profile_logic, edit_logic, update_logic
 import mysql.connector
 import os
 
@@ -44,7 +44,39 @@ def login():
 def logout():
     session.clear()
     flash('Successfully logged out!', 'info')
-    return redirect(url_for('login'))
+    return redirect(url_for('home'))
+
+@app.route('/roommates', methods=['GET'])
+def roommates():
+    if session.get('email'):
+        return roommates_logic.showRoommates()
+    else:
+        flash('Please sign in.', 'error')
+        return redirect(url_for('login'))
+    
+@app.route('/profile', methods=['GET', 'POST'])
+def profile():
+    if session.get('email'):
+        return profile_logic.profile()
+    else:
+        flash('Please sign in.', 'error')
+        return redirect(url_for('login'))
+    
+@app.route('/edit', methods=['POST'])
+def edit():
+    if session.get('email'):
+        return edit_logic.edit()
+    else:
+        flash('Please sign in.', 'error')
+        return redirect(url_for('login'))
+
+@app.route('/update', methods=['GET', 'POST'])
+def update():
+    if session.get('email'):
+        return update_logic.update()
+    else:
+        flash('Please sign in.', 'error')
+        return redirect(url_for('login'))
 
 @app.route('/roommates', methods=['GET'])
 def roommates():

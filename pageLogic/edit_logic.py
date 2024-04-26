@@ -1,14 +1,11 @@
-from flask import render_template, request, redirect, session, url_for, flash, abort
+from flask import render_template, session
 from config import Config
 import mysql.connector
-import bcrypt
 
-
-def profile():
+def edit():
     """
-        It fetches data from the database and displays it in the template.
+        Generate an edit template for the profile page.
     """
-    
     db = mysql.connector.connect(
         host=Config.DATABASE_HOST,
         user=Config.DATABASE_USER,
@@ -21,6 +18,8 @@ def profile():
 
     cur.execute("SELECT * FROM User WHERE bu_email = (%s)", (email,))
     user_info = cur.fetchone()
+    
+    
     cur.close()
     db.close()
-    return render_template("personal_profile_page.html", info=user_info, editable=False)
+    return render_template('personal_profile_page.html', info=user_info, editable=True)
