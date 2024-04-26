@@ -8,12 +8,11 @@
 ```sh
 pip install -r requirements.txt
 ```
-<<<<<<< HEAD
+
 # Database Setup:
 * Please install [MySQL](https://www.mysql.com/products/workbench/) first !!!
 * After installing MySQL, please update your own Config.py, unless you are using the default setting.
-=======
->>>>>>> 5f1b155 (Update README.md)
+
 ```sh
 python initialize_db.py
 ```
