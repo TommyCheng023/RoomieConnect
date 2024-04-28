@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify, session, redirect, url_for, flash
+import requests
 from config import Config
 # from yotpo_client import YotpoClient
 from pageLogic import register_logic, login_logic, roommates_logic, profile_logic, edit_logic, update_logic
@@ -78,6 +79,22 @@ def update():
         flash('Please sign in.', 'error')
         return redirect(url_for('login'))
 
+@app.route('/tarot')
+def tarot_card():
+    # API URL
+    url = "https://tarotapi.dev/api/v1/cards/random?n=1"
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        card = data['cards'][0] if 'cards' in data and len(data['cards']) > 0 else None
+        if card:
+            card_name = card.get('name')
+            card_meaning_up = card.get('meaning_up')
+            return render_template('tarot.html', card_name=card_name, card_meaning_up=card_meaning_up)
+        else:
+            return "No card found", 404
+    else:
+        return "Failed to fetch tarot card", response.status_code
 # @app.route('/reviews/<product_id>')
 # def get_product_reviews(product_id):
 #     try:

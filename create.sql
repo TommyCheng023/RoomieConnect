@@ -17,6 +17,3 @@ CREATE TABLE User (
     found_roommate BOOLEAN
 );
 
--- if created before merging the commits on April 20, 2024, execute this line
-ALTER TABLE User
-ADD found_roommate BOOLEAN;
