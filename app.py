@@ -1,13 +1,14 @@
 from flask import Flask, render_template, jsonify, session, redirect, url_for, flash
+import requests
 from config import Config
-from yotpo_client import YotpoClient
+# from yotpo_client import YotpoClient
 from pageLogic import register_logic, login_logic, roommates_logic, profile_logic, edit_logic, update_logic
 import mysql.connector
 import os
 
 # Initialization
 app = Flask(__name__)
-yotpo_client = YotpoClient()
+# yotpo_client = YotpoClient()
 app.config.from_object(Config)
 app.secret_key = os.environ.get('SECRET_KEY', 'optional_default_secret_key')
 
@@ -78,13 +79,29 @@ def update():
         flash('Please sign in.', 'error')
         return redirect(url_for('login'))
 
-@app.route('/reviews/<product_id>')
-def get_product_reviews(product_id):
-    try:
-        reviews = yotpo_client.get_reviews(product_id)
-        return jsonify(reviews)
-    except Exception as e:
-        return jsonify(error=str(e)), 500
+@app.route('/tarot')
+def tarot_card():
+    # API URL
+    url = "https://tarotapi.dev/api/v1/cards/random?n=1"
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        card = data['cards'][0] if 'cards' in data and len(data['cards']) > 0 else None
+        if card:
+            card_name = card.get('name')
+            card_meaning_up = card.get('meaning_up')
+            return render_template('tarot.html', card_name=card_name, card_meaning_up=card_meaning_up)
+        else:
+            return "No card found", 404
+    else:
+        return "Failed to fetch tarot card", response.status_code
+# @app.route('/reviews/<product_id>')
+# def get_product_reviews(product_id):
+#     try:
+#         reviews = yotpo_client.get_reviews(product_id)
+#         return jsonify(reviews)
+#     except Exception as e:
+#         return jsonify(error=str(e)), 500
 
 if __name__ == '__main__':
     app.run()
