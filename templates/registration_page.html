@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
 {% block head %}
-    <title>User Registration</title>
+    <title>RoomieConnect Registration</title>
     <link rel="stylesheet" href="../static/css/styles_registration.css">
     <script src="../static/js/validate_password.js"></script>
     <script src="../static/js/fafa_eye.js"></script>
 {% endblock %}
-
+{% block header %}{% endblock %}
+{% block navbar %}{% endblock %}
 {% block body %}
     <div class="registration-container">
         <h2 style="text-align: center;">Join our community!</h2>
-        <p>Already have an account? <a href="login" style="text-decoration: none;">Sign In</a></p>
+        <p>Already have an account? <a href="login" class="hypertext">Sign In</a>!</p>
         <form action="/register" method="post">
             <label for="email">Enter your email.</label>
             <input type="email" placeholder="Enter your BU Email." name="email" id="email">
@@ -53,7 +54,7 @@
             <input type="text" placeholder="Enter the building address." name="building-pref-2" id="b-pref">
             <input type="text" placeholder="Enter the building address." name="building-pref-3" id="b-pref">
 
-            <label for="rent-budget">Enter your monthly rental budget.</label>
+            <label for="rent-budget">Enter your monthly rental budget in dollars.</label>
             <input type="number" min="1000" step="100" placeholder="Enter a number or use the buttons to shift the value." name="budget" id="rent-budget" required>
 
             <label for="self-intro">Briefly describe yourself.</label>

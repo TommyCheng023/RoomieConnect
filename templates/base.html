@@ -5,34 +5,68 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../static/css/base.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <title>RoomieConnect</title>
         <script>
             // flash button feature
             function removeMsg() {
-                var msg = document.getElementById('flash_block')
-                msg.style.display = 'none';
+                var msg = document.getElementById('flash_block');
+                msg.style.animationName = 'fadeOut';
+                msg.addEventListener('animationend', function() {
+                    msg.style.display = 'none';
+                });
             }
         </script>
         {% block head %}
+        <title>RoomieConnect</title>
         {% endblock %}
     </head>
     <body>
-        <!-- Navbar -->
-        {% block body %}
+        {% block header %}
+        <div class="header">
+            <img src="static/images/RC_copy.jpeg" alt="RoomieConnect Logo" class="logo">
+            <h1>Off-Campus Housing Marketplace - RoomieConnect</h1>
+        </div>
         {% endblock %}
+        {% block navbar %}
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="navbar-section left">
+                <a href="/" class="navbar-brand">Home</a>
+                <a href="/roommates" class="navbar-brand">Roommates</a>
+                <a href="/resources" class="navbar-brand">Resources</a>
+            </div>
+            <div class="dropdown">
+                <div class="navbar-section right" id="menu-icon">
+                    <div class="icon-line"></div>
+                    <div class="icon-line"></div>
+                    <div class="icon-line"></div>
+                </div>
+                <div class="dropdown-content">
+                    <a href="/profile">Personal Profile</a>
+                    <a href="/logout">Log Out</a>
+                </div>
+            </div>
+        </nav>
+
+        {% endblock %}
+        {% block body %}{% endblock %}
 
         <!-- flash messages -->
-        {% with messages = get_flashed_messages() %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
         <div id="flash_block">
             {% if messages %}
-                {% for msg in messages %}
-                    {% if category == 'error' %}
-                        <p style="color: red">{{msg}}</p>
-                    {% elif category == 'info' %}
-                        <p style="color: green">{{msg}}</p>
-                    {% endif %}
-                    <button onclick="removeMsg()">OK</button>
-                {% endfor %}
+            {% for category, msg in messages %}
+            {% if category == 'error' %}
+            <div class="flash_content" id="error_bg">
+                <p class="flash_msg">{{msg}}</p>
+                <button class="flash_button" onclick="removeMsg()">OK</button>
+            </div>
+            {% elif category == 'info' %}
+            <div class="flash_content" id="success_bg">
+                <p class="flash_msg">{{msg}}</p>
+                <button class="flash_button" onclick="removeMsg()">OK</button>
+            </div>
+            {% endif %}
+            {% endfor %}
             {% endif %}
         </div>
         {% endwith %}

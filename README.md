@@ -1,6 +1,5 @@
 # CS-411-Group-Project
 * Planned Project Framework: Flask + Jinja + MySQL
-* Planned Project Framework: Flask + Jinja + MySQL
 
 ### Each person needs to create an individual local branch and work on the branch. **Don't push directly on master!**
 
@@ -8,12 +7,11 @@
 ```sh
 pip install -r requirements.txt
 ```
-<<<<<<< HEAD
+
 # Database Setup:
 * Please install [MySQL](https://www.mysql.com/products/workbench/) first !!!
 * After installing MySQL, please update your own Config.py, unless you are using the default setting.
-=======
->>>>>>> 5f1b155 (Update README.md)
+
 ```sh
 python initialize_db.py
 ```
@@ -47,12 +45,24 @@ Have no idea who to live with?
 * after the registration is done, user will be sent to `roommates matching main page`
 * at the same time, the user's own profile will automatically be displayed as a `card` on `roommates matching main page`
 
+### Registration Page Future Expectation
+<img width="1205" alt="image" src="https://github.com/TommyCheng023/CS-411-Group-Project/assets/123038158/19ed17bc-26d3-4ca6-9a0e-74ff446120a7">
+
+
 ### Login Page
 * enter **email and password** to login
 * `Forget Password`: a small subline under the login button
 
+### Login Page Future Expectation
+<img width="1142" alt="image" src="https://github.com/TommyCheng023/CS-411-Group-Project/assets/123038158/0cf69363-3cd6-4634-8f32-a0fcf6df15ea">
+
+
 ### Forget Password?
 * verification code through email
+
+### Forget Password Future Expectation
+<img width="1192" alt="image" src="https://github.com/TommyCheng023/CS-411-Group-Project/assets/123038158/9ba39e8f-61ac-44e8-a2ff-1f5f5679c3d4">
+
 
 ### Remove Posting
 * the user's own posted `card` has a `remove` button replaced by `contact`, once there's no need to find roommates, the `card` can be removed from the page by pressing the button
