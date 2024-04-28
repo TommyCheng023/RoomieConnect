@@ -87,27 +87,33 @@
     </div>
     {% else %}
     <h1 style="text-align: center;">Welcome back to RoomieConnect! {{ name }}.</h1>
-    <div class="user-wrapper">
-        <div class="user-index">
-            <a class="user-left" id="roomie" href="roommates"><i class="fa-solid fa-user-plus"></i></a>
-            <div class="user-right" id="roomie-right">
-                <h3>Find roommates that FIT!</h3>
-                <p>Post your profile to the marketplace and at the same time, find people that meet your expectation from our platform!</p>
+    <div class="large-container">
+        <div class="user-wrapper">
+            <div class="user-index">
+                <a class="user-left" id="roomie" href="roommates"><i class="fa-solid fa-user-plus"></i></a>
+                <div class="user-right" id="roomie-right">
+                    <h3>Find roommates that FIT!</h3>
+                    <p>Post your profile to the marketplace and at the same time, find people that meet your expectation from our platform!</p>
+                </div>
+            </div>
+            <div class="user-index">
+                <a class="user-left" id="housing" href="#"><i class="fa-solid fa-house"></i></a>
+                <div class="user-right" id="housing-right">
+                    <h3>Near BU? Cheap? Better living condition?</h3>
+                    <p>Our <u>resources</u> page shows you feedbacks and reviews of popular off-campus housing from Yotpo!</p>
+                </div>
+            </div>
+            <div class="user-index">
+                <a class="user-left" id="my-prof" href="/profile"><i class="fa-solid fa-gear"></i></a>
+                <div class="user-right" id="prof-right">
+                    <h3>Manage My Account</h3>
+                    <p>Do you have any updates to your profile? Remember to change your status after you found a roommate!</p>
+                </div>
             </div>
         </div>
-        <div class="user-index">
-            <a class="user-left" id="housing" href="#"><i class="fa-solid fa-house"></i></a>
-            <div class="user-right" id="housing-right">
-                <h3>Near BU? Cheap? Better living condition?</h3>
-                <p>Our <u>resources</u> page shows you feedbacks and reviews of popular off-campus housing from Yotpo!</p>
-            </div>
-        </div>
-        <div class="user-index">
-            <a class="user-left" id="my-prof" href="/profile"><i class="fa-solid fa-gear"></i></a>
-            <div class="user-right" id="prof-right">
-                <h3>Manage My Account</h3>
-                <p>Do you have any updates to your profile? Remember to change your status after you found a roommate!</p>
-            </div>
+        <div class="tarot-wrapper">
+            <img src="../static/images/tarot.gif" alt="get-your-tarot" style="width: 30vmin; height: 15vmin;">
+            <p><a href="/tarot" class="hypertext" style="font-size: xx-large; text-decoration: none;">Get Your Tarot</a></p>
         </div>
     </div>
     {% endif %}
