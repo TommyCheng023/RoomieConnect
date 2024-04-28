@@ -1,13 +1,13 @@
 from flask import Flask, render_template, jsonify, session, redirect, url_for, flash
 from config import Config
-from yotpo_client import YotpoClient
+# from yotpo_client import YotpoClient
 from pageLogic import register_logic, login_logic, roommates_logic, profile_logic, edit_logic, update_logic
 import mysql.connector
 import os
 
 # Initialization
 app = Flask(__name__)
-yotpo_client = YotpoClient()
+# yotpo_client = YotpoClient()
 app.config.from_object(Config)
 app.secret_key = os.environ.get('SECRET_KEY', 'optional_default_secret_key')
 
@@ -78,13 +78,13 @@ def update():
         flash('Please sign in.', 'error')
         return redirect(url_for('login'))
 
-@app.route('/reviews/<product_id>')
-def get_product_reviews(product_id):
-    try:
-        reviews = yotpo_client.get_reviews(product_id)
-        return jsonify(reviews)
-    except Exception as e:
-        return jsonify(error=str(e)), 500
+# @app.route('/reviews/<product_id>')
+# def get_product_reviews(product_id):
+#     try:
+#         reviews = yotpo_client.get_reviews(product_id)
+#         return jsonify(reviews)
+#     except Exception as e:
+#         return jsonify(error=str(e)), 500
 
 if __name__ == '__main__':
     app.run()
