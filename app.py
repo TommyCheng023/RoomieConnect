@@ -31,7 +31,18 @@ def home():
         userName = session.get('name')
         return render_template('index.html', name=userName)
     else:
-        return render_template('index.html', name=None)
+        try:
+            response = requests.get('https://api.quotable.io/random')
+            if response.status_code == 200:
+                quote = response.json()
+                quote_content = quote["content"]
+                author = quote["author"]
+            else:
+                # Normally, it should be unreachable. :3
+                return "For real?", 404
+        except requests.exceptions.RequestException as e:
+            print(str(e))
+        return render_template('index.html', name=None, content=quote_content, author=author)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -108,19 +119,7 @@ def tarot_card():
     else:
         flash('Please sign in to access this service.', 'error')
         return redirect(url_for('login'))
-@app.route('/random-quote')
-def random_quote():
-    try:
-        response = requests.get('https://api.quotable.io/random')
-        if response.status_code == 200:
-            quote = response.json()
-            return render_template('quote.html', 
-                                   quote_content=quote["content"], 
-                                   author=quote["author"])
-        else:
-            return "寄", 404
-    except requests.exceptions.RequestException as e:
-        print(str(e))
+
 # @app.route('/reviews/<product_id>')
 # def get_product_reviews(product_id):
 #     try:
