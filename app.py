@@ -47,6 +47,14 @@ def logout():
     flash('Successfully logged out!', 'info')
     return redirect(url_for('home'))
 
+@app.route('/resources')
+def resources():
+    if session.get('email'):
+        return render_template('resources.html')
+    else:
+        flash('Please sign in.', 'error')
+        return redirect(url_for('login'))
+
 @app.route('/roommates', methods=['GET'])
 def roommates():
     if session.get('email'):
