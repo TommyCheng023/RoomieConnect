@@ -78,14 +78,6 @@ def update():
         flash('Please sign in.', 'error')
         return redirect(url_for('login'))
 
-@app.route('/roommates', methods=['GET'])
-def roommates():
-    if session.get('email'):
-        return roommates_logic.showRoommates()
-    else:
-        flash('Please sign in.', 'error')
-        return login_logic.login()
-
 @app.route('/reviews/<product_id>')
 def get_product_reviews(product_id):
     try:
