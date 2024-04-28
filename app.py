@@ -31,7 +31,18 @@ def home():
         userName = session.get('name')
         return render_template('index.html', name=userName)
     else:
-        return render_template('index.html', name=None)
+        try:
+            response = requests.get('https://api.quotable.io/random')
+            if response.status_code == 200:
+                quote = response.json()
+                quote_content = quote["content"]
+                author = quote["author"]
+            else:
+                # Normally, it should be unreachable. :3
+                return "For real?", 404
+        except requests.exceptions.RequestException as e:
+            print(str(e))
+        return render_template('index.html', name=None, content=quote_content, author=author)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
