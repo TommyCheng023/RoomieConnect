@@ -16,6 +16,11 @@ pip install -r requirements.txt
 python initialize_db.py
 ```
 # Project Overview
+### Demo
+
+https://github.com/TommyCheng023/CS-411-Group-Project/assets/115842289/5bf57e59-8ce7-4524-b180-a5edc53b4e89
+
+
 ### Code Distribution
 * **App Basic**
   * Mingyuan Sun: Deployed default Flask framework; initialized and implemented database.
@@ -41,7 +46,6 @@ python initialize_db.py
   * Donovan Eyer: Finished Zillow API request logic, but the platform refused to provide information to student projects.
   * Xinyang Cheng: Finished Yotpo API request logic, but the products there were irrelevant to off-campus housing.
 
-### Demo is currently saved in the `docs` directory.
 
 ### Future Expectation
 Currently, the login and register pages have templates that do not fit a web screen. A better design is necessary.
