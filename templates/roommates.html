@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
+
 {% block head %}
+
     <title>Find your roommates!</title>
     <link rel="stylesheet" href="../static/css/roommates.css">
+    <!-- Functions used for pop-up window. -->
+    
+
 {% endblock %}
 {% block body %}
 <div class="container">
@@ -19,7 +24,47 @@
         </div>
         <div class="profile-action" style="display: flex; justify-content: space-around; flex-direction: column;">
             <a class="email-btn" style="margin-bottom: 20%;" href="mailto: {{entry['bu_email']}}">Email</a>
-            <button class="detail-btn">View Details</button>
+            <!-- Code used for pop-up window. -->
+            <button id="seeDetails" class="detail-btn">View Details</button>
+            <div id="userDetails" class="details-popup">
+                <div class="popup-content">
+                    <h1 class="center-align">Personal Details</h1>
+                    <p>Self-Description: {{entry['self_description']}}</p>
+                    <p>Roomate Expectations: {{entry['roommate_expectation']}}</p>
+                    <button id="hideDetails" class="detail-btn" style="padding: 10px 15px; margin: 0 auto;">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <script>
+                seeDetails.addEventListener(
+                    "click",
+                    function () {
+                        userDetails.classList.add("show");
+                    }
+                );
+                hideDetails.addEventListener(
+                    "click",
+                    function () {
+                        userDetails.classList.remove(
+                            "show"
+                        );
+                    }
+                );
+                window.addEventListener(
+                    "click",
+                    function (event) {
+                        if (event.target == userDetails) {
+                            userDetails.classList.remove(
+                                "show"
+                            );
+                        }
+                    }
+                );
+                
+            </script>
+
         </div>
     </div>
     {% endfor %}
