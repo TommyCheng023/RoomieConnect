@@ -13,7 +13,7 @@ def showRoommates():
         database=Config.DATABASE_DB
     )
     cur = db.cursor(dictionary=True, buffered=True)
-    cur.execute('SELECT * FROM User WHERE found_roommate = %s LIMIT 10', (0,))
+    cur.execute('SELECT * FROM User WHERE found_roommate = %s LIMIT 20', (0,))
     profiles = cur.fetchall()
     cur.close()
     db.close()

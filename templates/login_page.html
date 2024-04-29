@@ -21,3 +21,35 @@
         </form>
     </div>
 {% endblock %}
+
+{% block flash_msg %}
+    <script>
+        // fix emergency: close flash messages for login, register pages
+        function removeMsg2() {
+                var msg = document.getElementById('flash_block_in_login');
+                msg.style.animationName = 'fadeOut';
+                msg.addEventListener('animationend', function() {
+                    msg.style.display = 'none';
+                });
+            }
+    </script>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    <div id="flash_block_in_login">
+        {% if messages %}
+        {% for category, msg in messages %}
+        {% if category == 'error' %}
+        <div class="flash_content" id="error_bg">
+            <p class="flash_msg">{{msg}}</p>
+            <button class="flash_button" onclick="removeMsg2()">OK</button>
+        </div>
+        {% elif category == 'info' %}
+        <div class="flash_content" id="success_bg">
+            <p class="flash_msg">{{msg}}</p>
+            <button class="flash_button" onclick="removeMsg2()">OK</button>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    </div>
+    {% endwith %}
+{% endblock %}

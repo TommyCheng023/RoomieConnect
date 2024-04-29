@@ -96,7 +96,17 @@
     display: flex;
     justify-content: center;
     position: fixed;
-    top: 3%;
+    left: 50%;
+    top: 10%;
+    animation-name: none;
+    animation-duration: 0.5s;
+    z-index: 1000;
+}
+#flash_block_in_login {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 4%;
     animation-name: none;
     animation-duration: 0.5s;
     z-index: 1000;

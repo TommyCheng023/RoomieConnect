@@ -57,13 +57,45 @@
             <label for="rent-budget">Enter your monthly rental budget in dollars.</label>
             <input type="number" min="1000" step="100" placeholder="Enter a number or use the buttons to shift the value." name="budget" id="rent-budget" required>
 
-            <label for="self-intro">Briefly describe yourself.</label>
-            <textarea placeholder="There's a 200 characters maximum." id="self-intro" name="self-intro" required maxlength="200"></textarea>
+            <label for="self-intro">Briefly describe yourself. (optional)</label>
+            <textarea placeholder="There's a 200 characters maximum." id="self-intro" name="self-intro" maxlength="200"></textarea>
 
-            <label for="expectation">Briefly describe your roommate(s) expectation.</label>
-            <textarea placeholder="There's a 200 characters maximum." name="expectation" id="expectation" required maxlength="200"></textarea>
+            <label for="expectation">Briefly describe your roommate(s) expectation. (optional)</label>
+            <textarea placeholder="There's a 200 characters maximum." name="expectation" id="expectation" maxlength="200"></textarea>
 
             <div class="reg-button-container"><button type="submit">Register</button></div>
         </form>
     </div>
+{% endblock %}
+
+{% block flash_msg %}
+    <script>
+        // fix emergency: close flash messages for login, register pages
+        function removeMsg2() {
+                var msg = document.getElementById('flash_block_in_login');
+                msg.style.animationName = 'fadeOut';
+                msg.addEventListener('animationend', function() {
+                    msg.style.display = 'none';
+                });
+            }
+    </script>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    <div id="flash_block_in_login">
+        {% if messages %}
+        {% for category, msg in messages %}
+        {% if category == 'error' %}
+        <div class="flash_content" id="error_bg">
+            <p class="flash_msg">{{msg}}</p>
+            <button class="flash_button" onclick="removeMsg2()">OK</button>
+        </div>
+        {% elif category == 'info' %}
+        <div class="flash_content" id="success_bg">
+            <p class="flash_msg">{{msg}}</p>
+            <button class="flash_button" onclick="removeMsg2()">OK</button>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    </div>
+    {% endwith %}
 {% endblock %}
