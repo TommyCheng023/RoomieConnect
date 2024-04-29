@@ -51,6 +51,7 @@
         {% block body %}{% endblock %}
 
         <!-- flash messages -->
+        {% block flash_msg %}
         {% with messages = get_flashed_messages(with_categories=true) %}
         <div id="flash_block">
             {% if messages %}
@@ -70,5 +71,6 @@
             {% endif %}
         </div>
         {% endwith %}
+        {% endblock %}
     </body>
 </html>

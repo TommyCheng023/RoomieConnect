@@ -1,13 +1,10 @@
 {% extends 'base.html' %}
 
 {% block head %}
-
     <title>Find your roommates!</title>
     <link rel="stylesheet" href="../static/css/roommates.css">
-    <!-- Functions used for pop-up window. -->
-    
-
 {% endblock %}
+
 {% block body %}
 <div class="container">
     {% for entry in profiles %}
@@ -17,54 +14,54 @@
         </div>
         <div class="profile-info">
             <h3>{{entry['name']}}</h3>
+            {% if entry['age'] >= 17 %}
             <p>Age: {{entry['age']}}</p>
+            {% else %}
+            <p style="color: grey">This person does not want to tell the age.</p>
+            {% endif %}
+            {% if entry['gender'] == "prefer_not_to_say" %}
+            <p>Gender: Prefer not to say.</p>
+            {% else %}
             <p>Gender: {{entry['gender']}}</p>
+            {% endif %}
             <p>Academic Classification: {{entry['academic_classification']}}</p>
             <p>Monthly Rent Budget: ${{entry['rent_budget']}}</p>
         </div>
         <div class="profile-action" style="display: flex; justify-content: space-around; flex-direction: column;">
             <a class="email-btn" style="margin-bottom: 20%;" href="mailto: {{entry['bu_email']}}">Email</a>
             <!-- Code used for pop-up window. -->
-            <button id="seeDetails" class="detail-btn">View Details</button>
-            <div id="userDetails" class="details-popup">
+            <button class="detail-btn seeDetails">View Details</button>
+            <div class="details-popup userDetails">
                 <div class="popup-content">
-                    <h1 class="center-align">Personal Details</h1>
-                    <p>Self-Description: {{entry['self_description']}}</p>
-                    <p>Roomate Expectations: {{entry['roommate_expectation']}}</p>
-                    <button id="hideDetails" class="detail-btn" style="padding: 10px 15px; margin: 0 auto;">
+                    <h1 class="center-align">{{entry['name']}}'s Details</h1>
+                    {% if entry['self_description'] %}
+                    <p><b>Introduction:</b> {{entry['self_description']}}</p>
+                    {% else %}
+                    <p style="color: grey">Wierd... This person leaves introduction blank.</p>
+                    {% endif %}
+                    {% if entry['roommate_expectation'] %}
+                    <p><b>Roomate Expectations:</b> {{entry['roommate_expectation']}}</p>
+                    {% else %}
+                    <p style="color: grey">This person has no roommate expectation.</p>
+                    {% endif %}
+                    {% if not entry['building_preference1'] %}
+                    <p style="color: grey;">This person is willing to live anywhere.</p>
+                    {% else %}
+                    <p><b>First Building Preference:</b> {{entry['building_preference1']}}</p>
+                    {% if entry['building_preference2'] %}
+                    <p><b>Second Building Preference:</b> {{entry['building_preference2']}}</p>
+                    {% endif %}
+                    {% if entry['building_preference3'] %}
+                    <p><b>Third Building Preference:</b> {{entry['building_preference3']}}</p>
+                    {% endif %}
+                    {% endif %}
+                    <button class="detail-btn hideDetails" style="padding: 10px 15px; margin: 0 auto;">
                         Close
                     </button>
                 </div>
             </div>
 
-            <script>
-                seeDetails.addEventListener(
-                    "click",
-                    function () {
-                        userDetails.classList.add("show");
-                    }
-                );
-                hideDetails.addEventListener(
-                    "click",
-                    function () {
-                        userDetails.classList.remove(
-                            "show"
-                        );
-                    }
-                );
-                window.addEventListener(
-                    "click",
-                    function (event) {
-                        if (event.target == userDetails) {
-                            userDetails.classList.remove(
-                                "show"
-                            );
-                        }
-                    }
-                );
-                
-            </script>
-
+            <script src="../static/js/detail_window.js"></script>
         </div>
     </div>
     {% endfor %}
