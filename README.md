@@ -17,6 +17,8 @@ python initialize_db.py
 ```
 # Project Overview
 ### Demo
+* Since GitHub does not accept adding files over 100MB, this demo is too short to display all implemented page logic.
+   * **examples:** auto logout due to session expiration; registration/update profile restriction rules; dynamic templates for profile and roommate pages; abnormal session detection
 
 https://github.com/TommyCheng023/CS-411-Group-Project/assets/115842289/5bf57e59-8ce7-4524-b180-a5edc53b4e89
 
@@ -28,7 +30,7 @@ https://github.com/TommyCheng023/CS-411-Group-Project/assets/115842289/5bf57e59-
   * Xinyang Cheng: Built the navbar and footer; defined flash messages' style and categories; modified endpoint handlers for better UI.
 * **Home Page**
   * Xinyang Cheng: Constructed frontend templates; applied backend page logic; added scripts to improve UI.
-  * Mingyuan Sun: Applied backend logic for two APIs.
+  * Mingyuan Sun: Applied backend logic for Tarot API and Quotes API.
 * **Login Page**
   * Yingru Zou: Designed and built login page; designed a web template on Figma.
   * Xinyang Cheng: Wrote page logic to enable the login functionality.
