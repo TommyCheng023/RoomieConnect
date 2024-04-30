@@ -78,7 +78,11 @@
                 <div class="left-aligned"><b>Roommates Expectation:</b> {{ info['roommate_expectation'] }}</div>
                 <p4>&nbsp</p4>
                 {% if info['building_preference1'] or info['building_preference2'] or info['building_preference3'] %}
-                <div class="left-aligned"><b>Building Preferences:</b> {{ info['building_preference1'] }}, {{ info['building_preference2'] }}, {{ info['building_preference3'] }}</div>
+                <div class="left-aligned"><b>Building Preference 1:</b> {{ info['building_preference1'] }}</div>
+                <p4>&nbsp</p4>
+                <div class="left-aligned"><b>Building Preference 2:</b> {{ info['building_preference2'] }}</div>
+                <p4>&nbsp</p4>
+                <div class="left-aligned"><b>Building Preference 3:</b> {{ info['building_preference3'] }}</div>
                 {% else %}
                 <div class="left-aligned" style="color: grey; font-weight: bolder;">I don't have a building preference.</div>
                 {% endif %}
