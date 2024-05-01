@@ -28,6 +28,7 @@ https://github.com/TommyCheng023/CS-411-Group-Project/assets/115842289/5bf57e59-
   * Mingyuan Sun: Deployed default Flask framework; initialized and implemented database.
   * Asya Dente: Designed the logo; built the header.
   * Xinyang Cheng: Built the navbar and footer; defined flash messages' style and categories; modified endpoint handlers for better UI.
+  * Yingru Zou: Designed the app features and functionalities; identified the target audience; linked pages logic; designed the UI/UX of login page, forget password page, and registration page.
 * **Home Page**
   * Xinyang Cheng: Constructed frontend templates; applied backend page logic; added scripts to improve UI.
   * Mingyuan Sun: Applied backend logic for Tarot API and Quotes API.
