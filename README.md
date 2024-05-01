@@ -48,7 +48,7 @@ https://github.com/TommyCheng023/CS-411-Group-Project/assets/115842289/5bf57e59-
 * **Roommates Page**
   * **Asya Dente:** Constructed the frontend template for the page.
   * **Donovan Eyer:** Wrote scripts and improved page logic to improve UI.
-  * **Xinyang Cheng:** Added page logic to dynamically display roommates information; modified scripts and HTML.
+  * **Xinyang Cheng:** Added page logic to dynamically display roommates information; modified scripts and templates.
 * **Personal Profile**
   * **Donovan Eyer:** Constructed a profile-view template with a profile-edit template. 
   * **Xinyang Cheng:** Added page logic to the profile page; applied the profile-update functionality with an upgraded edit template.
