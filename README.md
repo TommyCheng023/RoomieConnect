@@ -17,36 +17,36 @@ python initialize_db.py
 ```
 # Project Overview
 ### Demo
-* Since GitHub does not accept adding files over 100MB, this demo is too short to display all implemented page logic.
-   * **examples:** auto logout due to session expiration; registration/update profile restriction rules; dynamic templates for profile and roommate pages; abnormal session detection
+* Since `README.md` cannot handle a video that is too long, this demo does not display all implemented page logic, features and templates.
+   * **unshown features:** auto logout due to session expiration; registration/update profile restriction rules; dynamic templates for profile and roommate pages; abnormal session detection; custom lines for categories storing `None`
 
 https://github.com/TommyCheng023/CS-411-Group-Project/assets/115842289/5bf57e59-8ce7-4524-b180-a5edc53b4e89
 
 
 ### Code Distribution
 * **App Basic**
-  * Mingyuan Sun: Deployed default Flask framework; initialized and implemented database.
-  * Asya Dente: Designed the logo; built the header.
-  * Xinyang Cheng: Built the navbar and footer; defined flash messages' style and categories; modified endpoint handlers for better UI.
+  * **Mingyuan Sun:** Deployed default Flask framework; initialized and implemented database.
+  * **Asya Dente:** Designed the project logo; built the header and the navbar.
+  * **Xinyang Cheng:** Modified the navbar and footer; defined flash messages' style and categories; managed endpoint handlers.
 * **Home Page**
-  * Xinyang Cheng: Constructed frontend templates; applied backend page logic; added scripts to improve UI.
-  * Mingyuan Sun: Applied backend logic for Tarot API and Quotes API.
+  * **Xinyang Cheng:** Constructed frontend templates; applied backend page logic; added scripts to improve UI.
+  * **Mingyuan Sun:** Found two APIs; applied backend logic and a frontend template for Tarot API and Quotes API.
 * **Login Page**
-  * Yingru Zou: Designed and built login page; designed a web template on Figma.
-  * Xinyang Cheng: Wrote page logic to enable the login functionality.
+  * **Yingru Zou:** Designed and built the login page; designed a web template on Figma.
+  * **Xinyang Cheng:** Implemented page logic to enable the login/logout functionality.
 * **Registration Page**
-  * Yingru Zou: Designed and built registration page; designed a web template on Figma.
-  * Xinyang Cheng: Wrote scripts to make the page more interactive; added page logic to enable the register functionality.
+  * **Yingru Zou:** Designed and built the registration page; designed a web template on Figma.
+  * **Xinyang Cheng:** Wrote scripts to make the page more interactive; added page logic to enable the register functionality.
 * **Roommates Page**
-  * Asya Dente: Constructed the frontend template for the page.
-  * Donovan Eyer: Wrote scripts and improved page logic to improve UI.
-  * Xinyang Cheng: Added page logic to dynamically display roommates information; modified scripts and HTML.
+  * **Asya Dente:** Constructed the frontend template for the page.
+  * **Donovan Eyer:** Wrote scripts and improved page logic to improve UI.
+  * **Xinyang Cheng:** Added page logic to dynamically display roommates information; modified scripts and HTML.
 * **Personal Profile**
-  * Xinyang Cheng: Added page logic to the profile page; applied the profile-update functionality with an upgraded edit template.
-  * Donovan Eyer: Constructed the profile-view template and a profile-edit template.
-* **Resources Page**
-  * Donovan Eyer: Finished Zillow API request logic, but the platform refused to provide information to student projects.
-  * Xinyang Cheng: Finished Yotpo API request logic, but the products there were irrelevant to off-campus housing.
+  * **Donovan Eyer:** Constructed a profile-view template with a profile-edit template. 
+  * **Xinyang Cheng:** Added page logic to the profile page; applied the profile-update functionality with an upgraded edit template.
+* **Resources Page (unused)**
+  * **Donovan Eyer:** Finished Zillow API request logic, but the platform refused to provide data for student projects.
+  * **Xinyang Cheng:** Finished Yotpo API request logic, but the products were irrelevant to off-campus housing.
 
 
 ### Future Expectation
