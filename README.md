@@ -32,11 +32,14 @@ https://github.com/TommyCheng023/CS-411-Group-Project/assets/115842289/5bf57e59-
   * Xinyang Cheng: Constructed frontend templates; applied backend page logic; added scripts to improve UI.
   * Mingyuan Sun: Applied backend logic for Tarot API and Quotes API.
 * **Login Page**
-  * Yingru Zou: Designed and built login page; designed a web template on Figma.
+  * Yingru Zou: Designed and built login page by using HTML and CSS; designed a web template on Figma.
   * Xinyang Cheng: Wrote page logic to enable the login functionality.
 * **Registration Page**
-  * Yingru Zou: Designed and built registration page; designed a web template on Figma.
+  * Yingru Zou: Designed and built registration page by using HTML and CSS; implemented a JavaScript-driven password visibility toggle for enhanced user experience and security in registration forms; designed a web template on Figma.
   * Xinyang Cheng: Wrote scripts to make the page more interactive; added page logic to enable the register functionality.
+* **Forgot Passward Page**
+  * Yingru Zou: Designed and built forgot passward page by using HTML and CSS; facilitated user access and password retrieval
+through email verification
 * **Roommates Page**
   * Asya Dente: Constructed the frontend template for the page.
   * Donovan Eyer: Wrote scripts and improved page logic to improve UI.
