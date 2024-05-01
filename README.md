@@ -1,5 +1,6 @@
 # CS-411-Group-Project
-* Planned Project Framework: Flask + Jinja + MySQL
+* Project Framework: Flask + Jinja
+* Database: MySQL
 
 ### Each person needs to create an individual local branch and work on the branch. **Don't push directly on master!**
 
@@ -16,6 +17,13 @@ pip install -r requirements.txt
 python initialize_db.py
 ```
 # Project Overview
+### Contributors
+* Xinyang Cheng
+* Mingyuan Sun
+* Donovan Eyer
+* Asya Dente
+* Yingru Zou
+
 ### Demo
 * Since `README.md` cannot handle a video that is too long, this demo does not display all implemented page logic, features and templates.
    * **unshown features:** auto logout due to session expiration; registration/update profile restriction rules; dynamic templates for profile and roommate pages; abnormal session detection; custom lines for categories storing `None`
