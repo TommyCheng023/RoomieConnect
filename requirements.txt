@@ -1,4 +1,6 @@
 Flask
 requests
+Flask-OAuthlib
 mysql.connector
+bcrypt
 

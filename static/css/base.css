@@ -1,0 +1,160 @@
+/*
+    This stylesheet contains not only the style rules for the navbar,
+    but also the general style rules for some common tags such as `p`, `h1` and `a`.
+
+    Header designed by Asya. Navbar and Flash designed by Tommy.
+*/
+/* header */
+.header { background-color: #480101; padding: 20px; color: white; }
+.header { display: flex; align-items: center; background-color: #480101; padding: 20px; color: white; }
+.logo { height: 130px; margin-right: 20px; border-radius: 45px;}
+.header h1 { margin: 0; font-size: 24px; }
+
+/* navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white; 
+    border-bottom: grey 2px solid;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+  
+.navbar-section {
+    display: flex;
+    align-items: center;
+}
+.navbar-section a {
+    text-decoration: none;
+    color: orange;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    font-size: large;
+}
+.navbar-section a:hover {
+    color: orangered;
+}
+.navbar-brand {
+    margin-right: 20px; 
+}
+.navbar-link {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+
+.right {
+    display: inline-block;
+    cursor: pointer;
+}
+.right:hover .icon-line {
+    background-color: orangered;
+}
+.icon-line {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+    transition: all 0.2s ease;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    align-items: flex-end;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+/* flash style rules */
+#flash_block {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    left: 50%;
+    top: 10%;
+    animation-name: none;
+    animation-duration: 0.5s;
+    z-index: 1000;
+}
+#flash_block_in_login {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 4%;
+    animation-name: none;
+    animation-duration: 0.5s;
+    z-index: 1000;
+}
+.flash_content {
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+}
+#error_bg {
+    background-color: #800000;
+}
+#success_bg {
+    background-color: green;
+}
+.flash_msg {
+    margin-top: 2px;
+    margin-bottom: 20px;
+    color: white;
+}
+.flash_button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+}
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+
+/* general style rules */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+label {
+    font-size: 0.9rem;
+}
+
+.hypertext {
+    color: orange;
+    transition: all ease 0.3s;
+}
+.hypertext:hover {
+    color: orangered;
+}  

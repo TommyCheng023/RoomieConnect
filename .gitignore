@@ -192,5 +192,7 @@ GitHub.sublime-settings
 .idea/modules.xml
 .idea/vcs.xml
 
-yotpo_credential.json
 config.py
+
+# Yotpo API
+yotpo_credential.json

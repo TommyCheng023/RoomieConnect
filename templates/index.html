@@ -1,10 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Index</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block head %}
+    <title>Homepage - RoomieConnect</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <script src="https://kit.fontawesome.com/30316820a7.js" crossorigin="anonymous"></script>
+    <script>
+        // document.querySelector('.user-left').addEventListener('mouseenter', function() {
+        //     document.querySelector('.user-right').classList.add('slide-in');
+        // });
+        
+        // document.querySelector('.user-left').addEventListener('mouseleave', function() {
+        //     document.querySelector('.user-right').classList.remove('slide-in');
+        // });
+    </script>
+{% endblock %}
+{% block navbar %}
+<nav class="navbar">
+    <div class="navbar-section left">
+        <a href="/" class="navbar-brand">Home</a>
+        <a href="/roommates" class="navbar-brand">Roommates</a>
+        <a href="/resources" class="navbar-brand">Resources</a>
+    </div>
+    <div class="dropdown">
+        <div class="navbar-section right" id="menu-icon">
+            <div class="icon-line"></div>
+            <div class="icon-line"></div>
+            <div class="icon-line"></div>
+        </div>
+        {% if name == None %}
+        <div class="dropdown-content">
+            <a href="/register">Register</a>
+            <a href="/login">Login</a>
+        </div>
+        {% else %}
+        <div class="dropdown-content">
+            <a href="/profile">Personal Profile</a>
+            <a href="/logout">Log Out</a>
+        </div>
+        {% endif %}
+    </div>
+</nav>
+{% endblock %}
+
+{% block body %}
+    <!-- Expected to be the main page of the website. -->
+    {% if name == None %}
+    <div class="index-wrapper">
+        <div class="left-index">
+            <h1>Welcome to RoomieConnect!</h1>
+            <p>Here you can connect and find roommates for your upcoming off-campus residential life!</p>
+            <p>This service is only valid for <b>Boston University</b> community.</p>
+            <div style="background-color: lightgrey; height: auto; padding: 2%; margin-bottom: 3%;">
+                <p style="font-size: large; font-weight: bold;">
+                    "{{ content }}" 
+                </p>
+                <p style="text-align: right; font-size: large; font-weight: bold;">--{{ author }}</p>
+            </div>
+            <div class="buttons">
+                <a class="common-design" href="register">Get Started</a>
+                <a class="common-design" href="login">Login</a>
+            </div>
+        </div>
+        <div class="right-index">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="../static/images/trac_75.jpg" style="width:100%;">
+                    <div class="text">75 Braintree Street</div>
+                </div>
+              
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="../static/images/83_Gard.jpeg" style="width:100%">
+                    <div class="text">83 Gardner Street</div>
+                </div>
+              
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="../static/images/Overlook_Apartment.jpeg" style="width:100%">
+                    <div class="text">175 Washington Street</div>
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+        <script src="../static/js/img_slider.js"></script>
+    </div>
+    {% else %}
+    <h1 style="text-align: center;">Welcome back to RoomieConnect! {{ name }}.</h1>
+    <div class="large-container">
+        <div class="user-wrapper">
+            <div class="user-index">
+                <a class="user-left" id="roomie" href="roommates"><i class="fa-solid fa-user-plus"></i></a>
+                <div class="user-right" id="roomie-right">
+                    <h3>Find roommates that FIT!</h3>
+                    <p>Post your profile to the marketplace and at the same time, find people that meet your expectation from our platform!</p>
+                </div>
+            </div>
+            <div class="user-index">
+                <a class="user-left" id="housing" href="resources"><i class="fa-solid fa-house"></i></a>
+                <div class="user-right" id="housing-right">
+                    <h3>Near BU? Cheap? Better living condition?</h3>
+                    <p>Our <u>resources</u> page shows you feedbacks and reviews of popular off-campus housing from Yotpo!</p>
+                </div>
+            </div>
+            <div class="user-index">
+                <a class="user-left" id="my-prof" href="/profile"><i class="fa-solid fa-gear"></i></a>
+                <div class="user-right" id="prof-right">
+                    <h3>Manage My Account</h3>
+                    <p>Do you have any updates to your profile? Remember to change your status after you found a roommate!</p>
+                </div>
+            </div>
+        </div>
+        <div class="tarot-wrapper">
+        <a href="/tarot">
+            <img src="../static/images/tarot.gif" alt="get-your-tarot" style="width: 35vmin; height: 20vmin;">
+            <p class="hypertext-2" style="font-size: xx-large; text-decoration: none; text-align: center;">Get Your Tarot!</p>
+        </a>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}

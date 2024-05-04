@@ -1,78 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>User Registration Page</title>
+{% extends 'base.html' %}
+{% block head %}
+    <title>RoomieConnect Registration</title>
     <link rel="stylesheet" href="../static/css/styles_registration.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <script>
-        function togglePasswordVisibility() {
-            var password = document.getElementById("password");
-            var rePassword = document.getElementById("rePassword");
-            var toggle = document.getElementById("togglePassword");
-
-            if (password.type === "password") {
-                password.type = "text";
-                rePassword.type = "text";
-                toggle.textContent = "Hide Passwords";
-            } else {
-                password.type = "password";
-                rePassword.type = "password";
-                toggle.textContent = "Show Passwords";
-            }
-        }
-
-        function validatePassword() {
-            var password = document.getElementById("password");
-            var rePassword = document.getElementById("rePassword");
-
-            if (password.value !== rePassword.value) {
-                alert("Passwords do not match. Please try again.");
-                return false;
-            }
-            return true;
-        }
-    </script>
-</head>
-<body>
+    <script src="../static/js/validate_password.js"></script>
+    <script src="../static/js/fafa_eye.js"></script>
+{% endblock %}
+{% block header %}{% endblock %}
+{% block navbar %}{% endblock %}
+{% block body %}
     <div class="registration-container">
-        <h2>User Registration</h2>
-        <form action="/register" method="post" onsubmit="return validatePassword()">
-            <input type="email" placeholder="BU Email" required pattern=".+@bu.edu" title="Please use your BU email.">
+        <h2 style="text-align: center;">Join our community!</h2>
+        <p>Already have an account? <a href="login" class="hypertext">Sign In</a>!</p>
+        <form action="/register" method="post">
+            <label for="email">Enter your email.</label>
+            <input type="email" placeholder="Enter your BU Email." name="email" id="email">
             
             <div class="input-group">
-                <input type="password" id="password" placeholder="Password" required pattern="(?=.*[a-zA-Z]).{8,}">
+                <label for="password">Create a 8-20 length password.</label>
+                <input type="password" id="password" name="password" placeholder="Create a password." required>
                 <i class="fa fa-eye toggle-password" onclick="togglePasswordVisibility('password', 'togglePassword')"></i>
             </div>
             <div class="input-group">
-                <input type="password" id="rePassword" placeholder="Re-enter Password" required>
+                <label for="rePassword">Verify your password.</label>
+                <input type="password" id="rePassword" name="verify-password" placeholder="Re-enter your created password." required oninput="validatePassword()">
                 <i class="fa fa-eye toggle-password" onclick="togglePasswordVisibility('rePassword', 'toggleRePassword')"></i>
+                <b style="color: darkred; background-color: darksalmon; font-size: small; display: none;" id="alert-msg-for-js">🚨: Passwords are not match!</b>
             </div>
             
-            <input type="text" placeholder="Name" required>
-            <select name="gender" required>
-                <option value="">Select Gender</option>
-                <option value="man">Man</option>
-                <option value="woman">Woman</option>
+            <label for="real-name">Enter your name in `First Name+Last Name` format.</label>
+            <input type="text" placeholder="Enter your name." name="real-name" id="real-name" required>
+
+            <label for="gender">Declare your gender.</label>
+            <select id="gender" name="gender" required>
+                <option value="" selected hidden disabled>Select gender.</option>
+                <option value="man">Male</option>
+                <option value="woman">Female</option>
                 <option value="prefer_not_to_say">Prefer not to say</option>
             </select>
-            <select name="classification" required>
-                <option value="">Academic Classification</option>
+            <label for="classification">Choose an academic classification.</label>
+            <select name="classification" id="classification" required>
+                <option value="" selected hidden disabled>Make a selection here.</option>
                 <option value="freshman">Freshman</option>
                 <option value="sophomore">Sophomore</option>
                 <option value="junior">Junior</option>
                 <option value="senior">Senior</option>
             </select>
-            <input type="number" placeholder="Age" required>
-            <input type="text" placeholder="Building Preference">
-            <input type="number" placeholder="Monthly Rent Budget" required>
 
-            <textarea placeholder="Self-Description (150 words max)" required maxlength="150"></textarea>
-            <textarea placeholder="Roommate Expectation (150 words max)" required maxlength="150"></textarea>
+            <label for="age">Enter your age as a number. <br> (enter 0 if you prefer not to tell)</label>
+            <input type="number" min="0" step="1" max="50" placeholder="Enter your age." name="age" id="age">
 
-            <button type="submit">Register</button>
+            <label for="b-pref">Enter three of your building preferences. (optional)</label>
+            <input type="text" placeholder="Enter the building address." name="building-pref" id="b-pref">
+            <input type="text" placeholder="Enter the building address." name="building-pref-2" id="b-pref">
+            <input type="text" placeholder="Enter the building address." name="building-pref-3" id="b-pref">
+
+            <label for="rent-budget">Enter your monthly rental budget in dollars.</label>
+            <input type="number" min="1000" step="100" placeholder="Enter a number or use the buttons to shift the value." name="budget" id="rent-budget" required>
+
+            <label for="self-intro">Briefly describe yourself. (optional)</label>
+            <textarea placeholder="There's a 200 characters maximum." id="self-intro" name="self-intro" maxlength="200"></textarea>
+
+            <label for="expectation">Briefly describe your roommate(s) expectation. (optional)</label>
+            <textarea placeholder="There's a 200 characters maximum." name="expectation" id="expectation" maxlength="200"></textarea>
+
+            <div class="reg-button-container"><button type="submit">Register</button></div>
         </form>
     </div>
-</body>
-</html>
+{% endblock %}
+
+{% block flash_msg %}
+    <script>
+        // fix emergency: close flash messages for login, register pages
+        function removeMsg2() {
+                var msg = document.getElementById('flash_block_in_login');
+                msg.style.animationName = 'fadeOut';
+                msg.addEventListener('animationend', function() {
+                    msg.style.display = 'none';
+                });
+            }
+    </script>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    <div id="flash_block_in_login">
+        {% if messages %}
+        {% for category, msg in messages %}
+        {% if category == 'error' %}
+        <div class="flash_content" id="error_bg">
+            <p class="flash_msg">{{msg}}</p>
+            <button class="flash_button" onclick="removeMsg2()">OK</button>
+        </div>
+        {% elif category == 'info' %}
+        <div class="flash_content" id="success_bg">
+            <p class="flash_msg">{{msg}}</p>
+            <button class="flash_button" onclick="removeMsg2()">OK</button>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    </div>
+    {% endwith %}
+{% endblock %}
+{% block footer %}{% endblock %}

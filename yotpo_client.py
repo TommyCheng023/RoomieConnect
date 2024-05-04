@@ -1,3 +1,7 @@
+"""
+NOTE: Unused Python file.
+"""
+
 import requests
 import json
 

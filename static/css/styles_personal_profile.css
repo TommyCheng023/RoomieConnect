@@ -1,0 +1,126 @@
+/* styles.css */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.information-container {
+    display:flex;
+    flex-direction:column;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width:100%;
+    max-width:90%;
+    text-align: center;
+    margin: 200px auto;
+}
+
+select {
+  font: inherit;
+  font-size:20px;
+}
+
+.button_color {
+    background-color: #f77f50;
+    width: 500px;
+    border: 1px solid black;
+}
+
+
+.left-aligned {
+    font-size:20px;
+    text-align: left;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #f77f50;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #f77f50;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.text {
+  max-width: 80%; /* Set the maximum width */
+  width: 80%;
+
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    background-color: #ee4b28;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+    font-size: 30px;
+}
+
+.btn:hover {
+    background-color: #f77f50;
+}
+

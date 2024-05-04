@@ -1,0 +1,136 @@
+.container { max-width: 1200px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+.profile-card { display: flex; align-items: center; border-bottom: 1px solid #eee; padding: 10px; }
+.profile-image { flex-shrink: 0; width: 80px; height: 80px; border-radius: 50%; background-color: #ddd; overflow: hidden; }
+.profile-image img { width: 100%; height: auto; }
+.profile-info { margin-left: 15px; flex-grow: 1; }
+.profile-info p { margin: 5px 0; }
+.profile-action { text-align: right; }
+.email-btn { padding: 10px 15px; background-color: #0056b3; color: white; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; text-align: center; transition: all 0.3s ease; }
+.email-btn:hover { background-color: #cf5906; }
+.detail-btn { background-color: grey; padding: 10px 15px; color: white; border: none; border-radius: 5px; cursor: pointer; transition: all 0.3s ease; }
+.detail-btn:hover { background-color: goldenrod; }
+.note { padding: 15px; background-color: #fffae6; margin-bottom: 20px; border-left: 3px solid #ffc107; }
+
+
+/*USING for See-Details pop-up*/
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+  }
+  
+  /* The popup form - hidden by default */
+  .form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+  
+  /* Full-width input fields */
+  .form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: red;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+
+/*CODE used for the pop-up window "View Details".*/
+.details-popup {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.4
+    );
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.popup-content {
+    
+    display:flex;
+    flex-direction:column;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width:100%;
+    max-width:80%;
+    text-align: left;
+    margin: 200px auto;
+    animation: fadeIn 0.5s;
+
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes fadeOut {
+    100% { opacity: 0; }
+    0% { opacity: 1; }
+  }
+
+
+
+.show {
+    display: block;
+    opacity: 1;
+}
+
+.center-align{
+    text-align:center;
+}
