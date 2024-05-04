@@ -19,7 +19,6 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=10)
 db_config = {
     'host': app.config['DATABASE_HOST'],
     'user': app.config['DATABASE_USER'],
-    #comment
     'password': app.config['DATABASE_PASSWORD'],
     'database': app.config['DATABASE_DB']
 }
